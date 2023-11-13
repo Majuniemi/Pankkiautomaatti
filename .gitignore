@@ -1,3 +1,4 @@
 backend/node_modules/
 bank-automat/build/
 bank-automat/*.user
+.DS_Store
