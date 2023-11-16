@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Asiakas = require('../models/Kortti_model');
+const Kortti = require('../models/Kortti_model');
 
 router.get('/',
     function (request, response) {
-        Asiakas.getAll(function (err, dbResult) {
+        Kortti.getAll(function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
@@ -16,7 +16,7 @@ router.get('/',
 
 router.get('/:id',
     function (request, response) {
-        Asiakas.getById(request.params.id, function (err, dbResult) {
+        Kortti.getById(request.params.id, function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {
@@ -28,7 +28,7 @@ router.get('/:id',
 
 router.post('/', 
 function(request, response) {
-  Asiakas.add(request.body, function(err, dbResult) {
+  Kortti.add(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -40,7 +40,7 @@ function(request, response) {
 
 router.delete('/:id', 
 function(request, response) {
-  Asiakas.delete(request.params.id, function(err, dbResult) {
+  Kortti.delete(request.params.id, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
@@ -52,7 +52,7 @@ function(request, response) {
 
 router.put('/:id', 
 function(request, response) {
-  Asiakas.update(request.params.id, request.body, function(err, dbResult) {
+  Kortti.update(request.params.id, request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {

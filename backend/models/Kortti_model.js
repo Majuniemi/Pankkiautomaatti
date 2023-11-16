@@ -23,6 +23,9 @@ const Kortti={
       return db.query('update Kortti set idKortti=?, Pinkoodi=?, Voimassa=? where idKortti=?',
       [Kortti.idKortti, hash, Kortti.Voimassa, id], callback);
     });
+  },
+  checkPassword: function(idKortti, callback) {
+    return db.query('SELECT Pinkoodi FROM Kortti WHERE idKortti = ?', [idKortti], callback);
   }
 };
           
