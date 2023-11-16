@@ -1,4 +1,4 @@
-use BankSimul_R9;
+use BankSimul_R;
 
 create user r9user@'localhost' identified by 'r9pass';
 grant all on BankSimul_R9.* to r9user@'localhost';
@@ -11,4 +11,10 @@ insert into Kortti values ('1234123423452345', '1234', '2024-04-20');
 
 select * from Kortti;
 
-delete from Kortti where idKortti='1234123423452345';
+DELETE FROM Kortti WHERE idKortti='1111111122222222';
+
+SELECT COUNT(*) AS Määrä FROM Kortti;
+
+ALTER TABLE `Kortti` CHANGE `Pin-koodi` `Pinkoodi` VARCHAR(255);
+
+

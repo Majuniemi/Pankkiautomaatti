@@ -10,8 +10,8 @@ const Kortti={
     return db.query('select * from Kortti where idKortti=?', [id], callback);
   },
   add: function(Kortti, callback) {
-    bcrypt.hash(`Kortti.Pin-koodi`, saltRounds, function(err, hash) {
-      return db.query('insert into Kortti (idKortti, `Pin-koodi`, Voimassa) values(?,?,?)',
+    bcrypt.hash(Kortti.Pinkoodi, saltRounds, function(err, hash) {
+      return db.query('insert into Kortti (idKortti, Pinkoodi, Voimassa) values(?,?,?)',
       [Kortti.idKortti, hash, Kortti.Voimassa], callback);
     });
   },
@@ -19,12 +19,11 @@ const Kortti={
     return db.query('delete from Kortti where idKortti=?', [id], callback);
   },
   update: function(id, Kortti, callback) {
-    bcrypt.hash(`Kortti.Pin-koodi`, saltRounds, function(err, hash) {
-      return db.query('update Kortti set idKortti=?, `Pin-koodi`=?, Voimassa=? where idKortti=?',
+    bcrypt.hash(Kortti.Pinkoodi, saltRounds, function(err, hash) {
+      return db.query('update Kortti set idKortti=?, Pinkoodi=?, Voimassa=? where idKortti=?',
       [Kortti.idKortti, hash, Kortti.Voimassa, id], callback);
     });
   }
-
-}
+};
           
 module.exports = Kortti;
