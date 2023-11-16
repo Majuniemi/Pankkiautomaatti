@@ -18,18 +18,19 @@ router.post('/',
             if (dbResult.length > 0) {
               bcrypt.compare(password,dbResult[0].Pinkoodi, function(err,compareResult) {
                 if(compareResult) {
-                  console.log("succes");
-                  response.send(true);
+                  console.log("Onnistui");
+                  const token = generateAccessToken({ username: Kortti });
+                  response.send(token);
                 }
                 else {
-                    console.log("wrong password");
+                    console.log("Väärä PIN-koodi");
                     response.send(false);
                 }			
               }
               );
             }
             else{
-              console.log("user does not exists");
+              console.log("Korttia ei ole olemassa");
               response.send(false);
             }
           }
@@ -37,10 +38,16 @@ router.post('/',
         );
       }
     else{
-      console.log("username or password missing");
+      console.log("Kortti tai PIN-koodi puuttuu");
       response.send(false);
     }
   }
 );
+
+function generateAccessToken(username) {
+  dotenv.config();
+  return jwt.sign(username, process.env.MY_TOKEN, { expiresIn: '1800s' });
+}
+
 
 module.exports=router;

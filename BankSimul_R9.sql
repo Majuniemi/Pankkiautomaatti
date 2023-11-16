@@ -11,7 +11,7 @@ insert into Kortti values ('1234123423452345', '1234', '2024-04-20');
 
 select * from Kortti;
 
-DELETE FROM Kortti WHERE idKortti='1111111122222222';
+DELETE FROM Kortti WHERE idKortti='1234123423452345';
 
 SELECT COUNT(*) AS Määrä FROM Kortti;
 

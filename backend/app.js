@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const jwt = require('jsonwebtoken');
 
 var indexRouter = require('./routes/index');
 var KorttiRouter = require('./routes/Kortti');
@@ -17,8 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-//app.use(authenticateToken);
-//Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
+app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
 app.use('/Kortti', KorttiRouter);
 
 
@@ -29,12 +29,12 @@ function authenticateToken(req, res, next) {
     console.log("token = "+token);
     if (token == null) return res.sendStatus(401)
   
-    jwt.verify(token, process.env.MY_TOKEN, (err, user) => {
+    jwt.verify(token, process.env.MY_TOKEN, (err, Kortti) => {
       console.log(err)
   
       if (err) return res.sendStatus(403)
   
-      req.user = user
+      req.Kortti = Kortti
   
       next()
     })
