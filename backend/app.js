@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 var indexRouter = require('./routes/index');
 var KorttiRouter = require('./routes/Kortti');
 var loginRouter = require('./routes/login');
+var AsiakasRouter = require('./routes/Asiakas');
 
 var app = express();
 
@@ -18,8 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
+app.use('/Asiakas', AsiakasRouter);
+//app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
 app.use('/Kortti', KorttiRouter);
+
 
 
 function authenticateToken(req, res, next) {
