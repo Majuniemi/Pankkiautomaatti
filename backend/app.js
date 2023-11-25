@@ -19,10 +19,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-app.use('/Asiakas', AsiakasRouter);
-//app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
+app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja ja vaativat Tokenin
 app.use('/Kortti', KorttiRouter);
-
+app.use('/Asiakas', AsiakasRouter);
 
 
 function authenticateToken(req, res, next) {
