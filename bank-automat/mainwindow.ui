@@ -180,7 +180,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Seis</string>
+     <string>X</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btCancel">
@@ -193,7 +193,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Peruuta</string>
+     <string>&lt;-</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btDBT">
@@ -219,7 +219,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Hyväksy</string>
+     <string>O</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
@@ -237,7 +237,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="labelOptionL1">
+    <widget class="QLabel" name="labelOption1">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -247,10 +247,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionL1</string>
+      <string>Option1</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionL2">
+    <widget class="QLabel" name="labelOption2">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -260,10 +260,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionL2</string>
+      <string>Option2</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionL4">
+    <widget class="QLabel" name="labelOption4">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -273,10 +273,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionL4</string>
+      <string>Option4</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionL3">
+    <widget class="QLabel" name="labelOption3">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -286,10 +286,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionL3</string>
+      <string>Option3</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionR2">
+    <widget class="QLabel" name="labelOption6">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -299,10 +299,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionR2</string>
+      <string>Option6</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionR3">
+    <widget class="QLabel" name="labelOption7">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -312,10 +312,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionR3</string>
+      <string>Option7</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionR4">
+    <widget class="QLabel" name="labelOption8">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -325,10 +325,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionR4</string>
+      <string>Option8</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelOptionR1">
+    <widget class="QLabel" name="labelOption5">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -338,7 +338,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>OptionR1</string>
+      <string>Option5</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelInput">
@@ -368,7 +368,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="btOptionL4">
+   <widget class="QPushButton" name="btOption4">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -381,7 +381,7 @@
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionL3">
+   <widget class="QPushButton" name="btOption3">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -394,7 +394,7 @@
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionL1">
+   <widget class="QPushButton" name="btOption1">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -407,7 +407,7 @@
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionL2">
+   <widget class="QPushButton" name="btOption2">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -420,7 +420,7 @@
      <string>&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionR4">
+   <widget class="QPushButton" name="btOption8">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -433,7 +433,7 @@
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionR3">
+   <widget class="QPushButton" name="btOption7">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -446,7 +446,7 @@
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionR1">
+   <widget class="QPushButton" name="btOption5">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -459,7 +459,7 @@
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btOptionR2">
+   <widget class="QPushButton" name="btOption6">
     <property name="geometry">
      <rect>
       <x>460</x>

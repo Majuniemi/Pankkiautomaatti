@@ -9,13 +9,16 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+MainWindow(QWidget *parent = nullptr);
+~MainWindow();
+int tila=2;
+public slots:
+void numberClickHandler();
+void commandClickHandler();
 
 private:
-    Ui::MainWindow *ui;
+Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
