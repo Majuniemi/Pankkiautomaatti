@@ -489,12 +489,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-<<<<<<< HEAD
      <height>21</height>
-    </rect>
-   </property>
-=======
-     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBankSimul_R9">
@@ -503,7 +498,6 @@
     </property>
    </widget>
    <addaction name="menuBankSimul_R9"/>
->>>>>>> 71f68afe95df23e7576fc38d8119e0803d082745
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
