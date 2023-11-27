@@ -25,7 +25,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(ui->btOption6,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption7,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption8,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(enterClickedHandler()));
     switch(tila){
     case 0:
         ui->labelOption1->setText(" ");
@@ -105,7 +104,8 @@ void MainWindow::numberClickHandler()
     default:
         return;
     }
-
+    olioLogin = new Login(this);
+    olioLogin->show();
 }
 
 void MainWindow::commandClickHandler()
@@ -221,53 +221,3 @@ void MainWindow::commandClickHandler()
         return;
     }
 }
-
-void MainWindow::enterClickedHandler()
-{
-    QString username="0000000011111111";            //tähän sitten ui->objekti->text();
-    QString password="0000";                        //tähän sitten ui->objekti->text();
-
-    QJsonObject jsonObj;
-    jsonObj.insert("idKortti",username);
-    jsonObj.insert("Pinkoodi",password);
-
-    QString site_url="http://localhost:3000/login";
-    QNetworkRequest request((site_url));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-    //WEBTOKEN ALKU
-    //QByteArray myToken="Bearer xRstgr...";
-    //request.setRawHeader(QByteArray("Authorization"),(myToken));
-    //WEBTOKEN LOPPU
-
-    postManager = new QNetworkAccessManager(this);
-    connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(loginSlot(QNetworkReply*)));
-
-    reply = postManager->post(request, QJsonDocument(jsonObj).toJson());
-
-}
-
-void MainWindow::loginSlot(QNetworkReply *reply)
-{
-    response_data=reply->readAll();
-    qDebug()<<response_data;
-    if(response_data.length()<2){
-        qDebug()<<"Palvelin ei vastaa";
-    }
-    else {
-        if(response_data=="-4078"){
-            qDebug()<<"Virhe tietokantayhteydessä";
-        }
-        else {
-            if (response_data!="false" && response_data.length()>20){
-                qDebug()<<"Login Ok";
-            }
-            else{
-                qDebug()<<"Pinkoodi väärin";
-            }
-        }
-    }
-    reply->deleteLater();
-    postManager->deleteLater();
-}
-
