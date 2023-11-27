@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Mainmenu</class>
+ <widget class="QDialog" name="Mainmenu">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +13,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>631</width>
+     <height>531</height>
+    </rect>
+   </property>
    <widget class="QPushButton" name="btNum1">
     <property name="geometry">
      <rect>
@@ -242,7 +250,7 @@
       <rect>
        <x>10</x>
        <y>50</y>
-       <width>71</width>
+       <width>111</width>
        <height>41</height>
       </rect>
      </property>
@@ -255,7 +263,7 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>71</width>
+       <width>101</width>
        <height>41</height>
       </rect>
      </property>
@@ -268,7 +276,7 @@
       <rect>
        <x>10</x>
        <y>200</y>
-       <width>71</width>
+       <width>131</width>
        <height>41</height>
       </rect>
      </property>
@@ -281,7 +289,7 @@
       <rect>
        <x>10</x>
        <y>150</y>
-       <width>71</width>
+       <width>111</width>
        <height>41</height>
       </rect>
      </property>
@@ -320,15 +328,12 @@
       <rect>
        <x>140</x>
        <y>200</y>
-       <width>121</width>
+       <width>131</width>
        <height>41</height>
       </rect>
      </property>
      <property name="text">
       <string>Option8</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="labelOption5">
@@ -363,9 +368,9 @@
     <widget class="QLabel" name="labelPrompt">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>80</y>
-       <width>271</width>
+       <x>80</x>
+       <y>10</y>
+       <width>111</width>
        <height>41</height>
       </rect>
      </property>
@@ -498,7 +503,16 @@
    </widget>
    <addaction name="menuBankSimul_R9"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>3</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

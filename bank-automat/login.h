@@ -5,6 +5,7 @@
 #include <QtNetwork>
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
+#include <mainmenu.h>
 
 namespace Ui {
 class Login;
@@ -22,6 +23,7 @@ private slots:
     void numberClickHandler();
     void enterClickHandler();
     void cancelClickHandler();
+    void stopClickHandler();
     void loginSlot(QNetworkReply *reply);
 
 private:
@@ -29,6 +31,9 @@ private:
     QNetworkAccessManager *postManager;
     QNetworkReply *reply;
     QByteArray response_data;
+    QByteArray token;
+
+    Mainmenu *olioMainmenu;
 };
 
 #endif // LOGIN_H

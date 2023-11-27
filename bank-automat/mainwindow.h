@@ -14,7 +14,6 @@ Q_OBJECT
 public:
 MainWindow(QWidget *parent = nullptr);
 ~MainWindow();
-int tila=0;
 
 public slots:
 void numberClickHandler();

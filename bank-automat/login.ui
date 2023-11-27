@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Login</string>
   </property>
   <widget class="QWidget" name="centralwidget" native="true">
    <property name="geometry">
@@ -372,7 +372,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>PIN-koodi</string>
+      <string>PIN-koodi:</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelPrompt">
@@ -396,7 +396,7 @@
       <rect>
        <x>70</x>
        <y>130</y>
-       <width>121</width>
+       <width>141</width>
        <height>16</height>
       </rect>
      </property>
@@ -520,16 +520,6 @@
     </property>
     <property name="text">
      <string>&lt;</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cbTilinvalinta">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>40</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
     </property>
    </widget>
   </widget>

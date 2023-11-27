@@ -12,14 +12,17 @@ CONFIG += c++17
 SOURCES += \
     login.cpp \
     main.cpp \
+    mainmenu.cpp \
     mainwindow.cpp
 
 HEADERS += \
     login.h \
+    mainmenu.h \
     mainwindow.h
 
 FORMS += \
     login.ui \
+    mainmenu.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -27,6 +27,7 @@ Login::Login(QWidget *parent)
     connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(enterClickHandler()));
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(cancelClickHandler()));
+    connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(stopClickHandler()));
 
 }
 
@@ -55,11 +56,6 @@ void Login::enterClickHandler()
     QNetworkRequest request((site_url));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-    //WEBTOKEN ALKU
-    //QByteArray myToken="Bearer xRstgr...";
-    //request.setRawHeader(QByteArray("Authorization"),(myToken));
-    //WEBTOKEN LOPPU
-
     postManager = new QNetworkAccessManager(this);
     connect(postManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(loginSlot(QNetworkReply*)));
 
@@ -77,10 +73,15 @@ void Login::cancelClickHandler()
     }
 }
 
+void Login::stopClickHandler()
+{
+    accept();
+}
+
 void Login::loginSlot(QNetworkReply *reply)
 {
     response_data=reply->readAll();
-    qDebug()<<response_data;
+    //qDebug()<<response_data;
     if(response_data.length()<2){
         qDebug()<<"Palvelin ei vastaa";
         ui->labelPrompt->setText("Palvelin ei vastaa");
@@ -94,10 +95,16 @@ void Login::loginSlot(QNetworkReply *reply)
             if (response_data!="false" && response_data.length()>20){
                 qDebug()<<"Login Ok";
                 ui->labelPrompt->setText("Login Ok");
+                token = "Bearer "+response_data;
+                qDebug()<<token;
+                olioMainmenu = new Mainmenu(this);
+                olioMainmenu->showFullScreen();
+                accept();
             }
             else{
                 qDebug()<<"Korttinumero tai PIN-koodi väärin";
                 ui->labelPrompt->setText("Korttinumero tai PIN-koodi väärin");
+                ui->labelPassword->clear();
             }
         }
     }
