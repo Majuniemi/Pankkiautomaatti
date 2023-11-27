@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "login.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -13,12 +14,13 @@ Q_OBJECT
 public:
 MainWindow(QWidget *parent = nullptr);
 ~MainWindow();
-int tila=2;
+
 public slots:
 void numberClickHandler();
 void commandClickHandler();
 
 private:
 Ui::MainWindow *ui;
+Login *olioLogin;
 };
 #endif // MAINWINDOW_H

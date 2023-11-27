@@ -12,12 +12,6 @@ Projektin järjestelmäympäristö käy ilmi alla olevasta käyttöönottokaavio
 
 <img src="Käyttöönottokaavio.png">
 
-## Käyttöliittymä
-
-Projektin käyttöliittymän pushbutton- ja labelnimeämiskartta
-
-<img src="Käyttöliittymä.png">
-
 ## Tietokantayhteys
 Luodaan tunnus, jolla sovelluksesta kytkeydytään tietokantaan.
 

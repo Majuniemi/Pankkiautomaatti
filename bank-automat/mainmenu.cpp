@@ -1,21 +1,20 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "mainmenu.h"
+#include "ui_mainmenu.h"
 
-
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-
+Mainmenu::Mainmenu(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::Mainmenu)
 {
     ui->setupUi(this);
-    ui->labelOption1->setText(" ");
-    ui->labelOption2->setText(" ");
-    ui->labelOption3->setText(" ");
-    ui->labelOption4->setText(" ");
+    ui->labelOption1->setText("Nosta rahaa");
+    ui->labelOption2->setText("Tilisiirto");
+    ui->labelOption3->setText("Saldo");
+    ui->labelOption4->setText("Tilitapahtumat");
     ui->labelOption5->setText("Language");
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
-    ui->labelOption8->setText("Kirjaudu sisään");
-    ui->labelPrompt->setText("Tervetuloa!");
+    ui->labelOption8->setText("");
+    ui->labelPrompt->setText("Valitse toiminto");
     ui->labelInput->setText(" ");
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -41,12 +40,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
 }
 
-MainWindow::~MainWindow()
+Mainmenu::~Mainmenu()
 {
     delete ui;
 }
 
-void MainWindow::numberClickHandler()
+void Mainmenu::numberClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
@@ -57,42 +56,41 @@ void MainWindow::numberClickHandler()
     }
 }
 
-void MainWindow::commandClickHandler()
+void Mainmenu::commandClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-        if (button->objectName()=="btOption1"){
+    if (button->objectName()=="btOption1"){
 
-        }
-        else if (button->objectName()=="btOption2"){
+    }
+    else if (button->objectName()=="btOption2"){
 
-        }
-        else if (button->objectName()=="btOption3"){
+    }
+    else if (button->objectName()=="btOption3"){
 
-        }
-        else if (button->objectName()=="btOption4"){
+    }
+    else if (button->objectName()=="btOption4"){
 
-        }
-        else if (button->objectName()=="btOption5"){
+    }
+    else if (button->objectName()=="btOption5"){
 
-        }
-        else if (button->objectName()=="btOption6"){
+    }
+    else if (button->objectName()=="btOption6"){
 
-        }
-        else if (button->objectName()=="btOption7"){
+    }
+    else if (button->objectName()=="btOption7"){
 
-        }
-        else if (button->objectName()=="btOption8"){
-            olioLogin = new Login(this);
-            olioLogin->showFullScreen();
-        }
-        else if (button->objectName()=="btStop"){
+    }
+    else if (button->objectName()=="btOption8"){
 
-        }
-        else if (button->objectName()=="btCancel"){
+    }
+    else if (button->objectName()=="btStop"){
+        accept();
+    }
+    else if (button->objectName()=="btCancel"){
 
-        }
-        else if (button->objectName()=="btAccept"){
+    }
+    else if (button->objectName()=="btAccept"){
 
-        }
+    }
 }

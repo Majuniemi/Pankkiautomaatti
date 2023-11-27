@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Login</class>
+ <widget class="Login" name="Login">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,9 +11,17 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Login</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>861</width>
+     <height>531</height>
+    </rect>
+   </property>
    <widget class="QPushButton" name="btNum1">
     <property name="geometry">
      <rect>
@@ -318,17 +326,14 @@
     <widget class="QLabel" name="labelOption8">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>200</x>
        <y>200</y>
-       <width>121</width>
+       <width>71</width>
        <height>41</height>
       </rect>
      </property>
      <property name="text">
       <string>Option8</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="labelOption5">
@@ -344,36 +349,72 @@
       <string>Option5</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelInput">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
        <x>70</x>
        <y>110</y>
-       <width>111</width>
-       <height>41</height>
+       <width>121</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>input</string>
+      <string>Syötä kortti:</string>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>160</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PIN-koodi:</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelPrompt">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>80</y>
+       <y>20</y>
        <width>271</width>
-       <height>41</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string>Prompt</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelUser">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPassword">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>180</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -488,7 +529,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBankSimul_R9">
@@ -498,8 +539,25 @@
    </widget>
    <addaction name="menuBankSimul_R9"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>3</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Login</class>
+   <extends>QWidget</extends>
+   <header>login.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
