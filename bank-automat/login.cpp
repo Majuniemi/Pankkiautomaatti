@@ -25,10 +25,15 @@ Login::Login(QWidget *parent)
     connect(ui->btNum8,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum9,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
+
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(enterClickHandler()));
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(cancelClickHandler()));
     connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(stopClickHandler()));
 
+    connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
+    connect(ui->btOption7,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
+
+    ui->lineEditPassword->setEchoMode(QLineEdit::Password);     // Asettaa password kentän salasanamoodiin, joka salaa näppäillyt merkit
 }
 
 Login::~Login()
@@ -36,18 +41,25 @@ Login::~Login()
     delete ui;
 }
 
+void Login::lueKortti(const QString &korttinumero)
+{
+    qDebug()<<"Korttinumero Login luokassa: "<<korttinumero;
+    username=korttinumero;
+}
+
 void Login::numberClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
-    QLabel *currentEdit = ui->labelPassword;
+    QLineEdit * currentEdit = ui->lineEditPassword;
     currentEdit->setText(currentEdit->text() + button->text());
 }
 
 void Login::enterClickHandler()
 {
-    QString username = "0000000011111111";
-    ui->labelUser->setText(username);
-    QString password = ui->labelPassword->text();
+    //QString username = "0000000011111111";
+    //ui->labelUser->setText(username);
+    //qDebug()<<"username on nyt: "<<username;
+    QString password = ui->lineEditPassword->text();
     QJsonObject jsonObj;
     jsonObj.insert("idKortti",username);
     jsonObj.insert("Pinkoodi",password);
@@ -64,7 +76,7 @@ void Login::enterClickHandler()
 
 void Login::cancelClickHandler()
 {
-    QLabel *currentEdit = ui->labelPassword;
+    QLineEdit *currentEdit = ui->lineEditPassword;
     QString currentText = currentEdit->text();
     currentEdit->setText(currentEdit->text());
     if (!currentText.isEmpty()) {
@@ -76,6 +88,27 @@ void Login::cancelClickHandler()
 void Login::stopClickHandler()
 {
     accept();
+}
+
+void Login::commandClickHandler()
+{
+    QPushButton * button = qobject_cast<QPushButton*>(sender());
+    if (button->objectName()=="btOption3"){
+        //Valitse credit-tili
+        qDebug()<<"Valitsit credit-tilin";
+        //olioMainmenu = new Mainmenu(this);
+        olioMainmenu = new Mainmenu(this);
+        olioMainmenu->show();
+        accept();
+    }
+    else if (button->objectName()=="btOption7"){
+        //Valitse debit-tili
+        qDebug()<<"Valitsit debit-tilin";
+        //olioMainmenu = new Mainmenu(this);
+        olioMainmenu = new Mainmenu(this);
+        olioMainmenu->show();
+        accept();
+    }
 }
 
 void Login::loginSlot(QNetworkReply *reply)
@@ -94,20 +127,50 @@ void Login::loginSlot(QNetworkReply *reply)
         else {
             if (response_data!="false" && response_data.length()>20){
                 qDebug()<<"Login Ok";
-                ui->labelPrompt->setText("Login Ok");
+                //ui->labelPrompt->setText("Login Ok");
                 token = "Bearer "+response_data;
                 qDebug()<<token;
-                olioMainmenu = new Mainmenu(this);
-                olioMainmenu->showFullScreen();
-                accept();
+                ui->labelOption1->setText(" ");
+                ui->labelOption2->setText(" ");
+                ui->labelOption3->setText("Credit");
+                ui->labelOption4->setText(" ");
+                ui->labelOption5->setText("Language");
+                ui->labelOption6->setText(" ");
+                ui->labelOption7->setText("Debit");
+                ui->labelOption8->setText(" ");
+                ui->lineEditPassword->hide();
+                ui->labelPrompt->setText(" ");
+                ui->label_2->setText(" ");
             }
             else{
                 qDebug()<<"Korttinumero tai PIN-koodi väärin";
                 ui->labelPrompt->setText("Korttinumero tai PIN-koodi väärin");
-                ui->labelPassword->clear();
+                ui->lineEditPassword->clear();
             }
         }
     }
     reply->deleteLater();
     postManager->deleteLater();
 }
+
+/*
+// Oletetaan, että db on QSqlDatabase-olio ja on aikaisemmin avattu tietokantaan
+QSqlQuery query(db);
+korttinumero = username;
+query.prepare("SELECT korttityyppi FROM kortit WHERE korttinumero = :korttinumero");
+query.bindValue(":korttinumero", korttinumero);
+
+if (query.exec() && query.next()) {
+    QString korttityyppi = query.value(0).toString();
+
+    // Tässä voit tarkistaa korttityypin ja tehdä tarvittavat toimenpiteet
+    if (korttityyppi == "yhdistelmäkortti") {
+        // Tee jotain yhdistelmäkortin kanssa
+    } else {
+        // Tee jotain muun tyyppisen kortin kanssa
+    }
+} else {
+    // Virhe tietokantakyselyssä
+    qDebug() << "Virhe tietokantakyselyssä:" << query.lastError().text();
+}*/
+

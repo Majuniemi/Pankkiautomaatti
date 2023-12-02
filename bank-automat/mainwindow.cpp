@@ -39,6 +39,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
+
+    // Luodaan sarjamonitoriyhteys, jotta voidaan lukea RFID lukijalla tägin tiedot Qt:ssa.
+    serialPort = new QSerialPort(this);
+    serialPort->setPortName("/dev/tty.usbmodem13101");      // Vaihda tähän lukijan sarjaportin nimi
+    serialPort->setBaudRate(QSerialPort::Baud9600);
+    serialPort->setDataBits(QSerialPort::Data8);
+    serialPort->setParity(QSerialPort::NoParity);
+    serialPort->setStopBits(QSerialPort::OneStop);
+    // Tämä tulostaa debug tietona, että onnistuuko sarjaportin yhteys.
+    if (serialPort->open(QIODevice::ReadWrite)) {
+        qDebug() << "Sarjaportti avattu onnistuneesti";
+    } else {
+        qDebug() << "Sarjaportin yhdistämisessä virhe: " << serialPort->errorString();
+    }
+    connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);
 }
 
 MainWindow::~MainWindow()
@@ -84,10 +99,11 @@ void MainWindow::commandClickHandler()
         }
         else if (button->objectName()=="btOption8"){
             olioLogin = new Login(this);
-            olioLogin->showFullScreen();
+            olioLogin->lueKortti("0000000011111111");
+            olioLogin->show();
         }
         else if (button->objectName()=="btStop"){
-
+            close();
         }
         else if (button->objectName()=="btCancel"){
 
@@ -95,4 +111,21 @@ void MainWindow::commandClickHandler()
         else if (button->objectName()=="btAccept"){
 
         }
+}
+
+void MainWindow::readData()
+{
+    QString RFIDtieto = serialPort->readAll();      // Luetaan RFID-tägin sisältämä tieto
+    //qDebug()<<"Kortinlukija luki:" << RFIDtieto;
+
+    QString korttinumero;
+    for (const QChar &ch : RFIDtieto) {             // Siivotaan ylimääräiset merkit pois
+    if (ch.isDigit() || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f')) {
+        korttinumero.append(ch);
+        }
+    }
+    //qDebug()<<"Korttinumero nyt:" << korttinumero;  // Lähetetään korttinumero signaalissa eteenpäin
+    olioLogin = new Login(this);
+    olioLogin->lueKortti(korttinumero);
+    olioLogin->show();
 }

@@ -19,11 +19,15 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
+public slots:
+    void lueKortti(const QString &korttinumero);
+
 private slots:
     void numberClickHandler();
     void enterClickHandler();
     void cancelClickHandler();
     void stopClickHandler();
+    void commandClickHandler();
     void loginSlot(QNetworkReply *reply);
 
 private:
@@ -32,8 +36,8 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
     QByteArray token;
-
     Mainmenu *olioMainmenu;
+    QString username;
 };
 
 #endif // LOGIN_H
