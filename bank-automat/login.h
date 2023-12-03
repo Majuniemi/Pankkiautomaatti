@@ -29,12 +29,16 @@ private slots:
     void stopClickHandler();
     void commandClickHandler();
     void loginSlot(QNetworkReply *reply);
+    void getKorttiSlot(QNetworkReply *reply);
 
 private:
     Ui::Login *ui;
     QNetworkAccessManager *postManager;
+    QNetworkAccessManager *getManager;
     QNetworkReply *reply;
+    QNetworkReply *replyKortti;
     QByteArray response_data;
+    QByteArray response_dataKortti;
     QByteArray token;
     Mainmenu *olioMainmenu;
     QString username;

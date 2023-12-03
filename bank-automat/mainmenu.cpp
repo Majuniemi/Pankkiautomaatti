@@ -94,3 +94,15 @@ void Mainmenu::commandClickHandler()
 
     }
 }
+
+void Mainmenu::setUsername(const QString &newUsername)
+{
+    username = newUsername;
+    qDebug()<<"Username Mainmenu luokassa: "<<username;
+}
+
+void Mainmenu::setToken(const QByteArray &newToken)
+{
+    token = newToken;
+    qDebug()<<"Token Mainmenu luokassa: "<<token;
+}
