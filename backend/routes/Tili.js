@@ -25,4 +25,37 @@ router.get('/:id',
         })
     });
 
+router.get('/getone/:id',
+    function (request, response) {
+        Tili.getOne(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult[0]);
+            }
+        })
+    });
+
+router.get('/getdebit/:id',
+    function (request, response) {
+        Tili.getDebit(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult[0]);
+            }
+        })
+    });
+
+router.get('/getcredit/:id',
+    function (request, response) {
+        Tili.getCredit(request.params.id, function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult[0]);
+            }
+        })
+    });
+
 module.exports = router;

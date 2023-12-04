@@ -30,15 +30,19 @@ private slots:
     void commandClickHandler();
     void loginSlot(QNetworkReply *reply);
     void getKorttiSlot(QNetworkReply *reply);
+    void getTiliSlot(QNetworkReply *reply);
 
 private:
     Ui::Login *ui;
     QNetworkAccessManager *postManager;
-    QNetworkAccessManager *getManager;
+    QNetworkAccessManager *getcountManager;
+    QNetworkAccessManager *getoneManager;
     QNetworkReply *reply;
     QNetworkReply *replyKortti;
+    QNetworkReply *replyTili;
     QByteArray response_data;
     QByteArray response_dataKortti;
+    QByteArray response_dataTili;
     QByteArray token;
     Mainmenu *olioMainmenu;
     QString username;
