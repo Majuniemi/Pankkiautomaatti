@@ -127,5 +127,5 @@ void MainWindow::readData()
     //qDebug()<<"Korttinumero nyt:" << korttinumero;
     olioLogin = new Login(this);
     olioLogin->lueKortti(korttinumero);                                                         //Lähetetään korttinumero signaalissa eteenpäin
-    olioLogin->showFullScreen();
+    olioLogin->show();
 }

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Tausta">
+        <file>Taustakuva.jpg</file>
+    </qresource>
+</RCC>
