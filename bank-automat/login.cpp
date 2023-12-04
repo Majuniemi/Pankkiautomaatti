@@ -217,7 +217,7 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu = new Mainmenu(this);
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
-        olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
+        olioMainmenu->showFullScreen();                                                       //Avataan Mainmenu-olion ikkuna
         accept();                                                                   //Suljetaan Login-olion ikkuna
     }
     else {
