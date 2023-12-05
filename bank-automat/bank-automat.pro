@@ -14,17 +14,23 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainmenu.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    saldo.cpp \
+    tilitapahtuma.cpp
 
 HEADERS += \
     login.h \
     mainmenu.h \
-    mainwindow.h
+    mainwindow.h \
+    saldo.h \
+    tilitapahtuma.h
 
 FORMS += \
     login.ui \
     mainmenu.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    saldo.ui \
+    tilitapahtuma.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

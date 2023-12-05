@@ -100,7 +100,60 @@ void Mainmenu::setUsername(const QString &newUsername)
     username = newUsername;
     qDebug()<<"Username Mainmenu luokassa: "<<username;
 }
+void Mainmenu::on_btOption4_clicked()  // nappi jolla siirrytään Tilitapahtuma ikkunaan
+{
+    QString site_url="http://localhost:3000/Tilitapahtuma";
+    QNetworkRequest request((QUrl(site_url)));
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
+    getManager = new QNetworkAccessManager(this);
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getTT(QNetworkReply*)));
+    reply = getManager->get(request);
+    // QSqlQuery query;
+    qDebug() << "Tilitapahtumat nappia on painettu";
 
+}
+    void Mainmenu::getTT(QNetworkReply *reply)  //printataan tilitapahtumiin tietokannasta halutut tiedot
+    {
+        /*  response_data=reply->readAll();
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    QString Tilitapahtumat;
+    int TTmaara = 0;
+    for (const QJsonValue &value : json_array) {
+    if (TTmaara >=5) {
+    break;
+    }
+    QJsonObject json_obj = value.toObject();
+    Tilitapahtumat += QString::number(json_obj["Saldomuutos"].toInt()) + "   " +
+    QString::number(json_obj["Aikaleima"].toInt()) + "   " +
+    json_obj["Muutoslaji"].toString() + "   " +
+    QString::number(json_obj["idTili"].toInt()) + "   " +
+    json_obj["Paikkatieto"].toString() + "\r";
+    TTmaara++; */ // Saadaan 5tilitapahtumaa kerralla mutta nappi sakkas ja moti
+        response_data=reply->readAll();
+        qDebug() << "response data on nyt:" + response_data;
+        QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+        QJsonArray json_array = json_doc.array();
+        QString Tilitapahtumat;
+        for (const QJsonValue &value : json_array) {
+            QJsonObject json_obj = value.toObject();
+            Tilitapahtumat += QString::number(json_obj["Saldomuutos"].toInt()) + "   " +
+                              QString::number(json_obj["Aikaleima"].toInt()) + "   " +
+                              json_obj["Muutoslaji"].toString() + "   " +
+                              QString::number(json_obj["idTili"].toInt()) + "   " +
+                              json_obj["Paikkatieto"].toString() + "\r";
+            qDebug() << Tilitapahtumat;
+        }
+
+        tilitapahtumalista =new Tilitapahtuma(this);
+        tilitapahtumalista->showTilitapahtuma(Tilitapahtumat);
+        tilitapahtumalista->showFullScreen();
+        //  ui->labelInput->setText(Tilitapahtumat);
+        reply->deleteLater();
+        getManager->deleteLater();
+    }
 void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;

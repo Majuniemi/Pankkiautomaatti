@@ -1,0 +1,12 @@
+debug/login.o
+debug/main.o
+debug/mainmenu.o
+debug/mainwindow.o
+debug/saldo.o
+debug/tilitapahtuma.o
+debug/qrc_Tausta.o
+debug/moc_login.o
+debug/moc_mainmenu.o
+debug/moc_mainwindow.o
+debug/moc_saldo.o
+debug/moc_tilitapahtuma.o
