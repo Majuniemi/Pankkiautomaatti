@@ -3,6 +3,7 @@
 
 #include "login.h"
 #include <QMainWindow>
+#include <QSerialPort>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,9 +19,11 @@ MainWindow(QWidget *parent = nullptr);
 public slots:
 void numberClickHandler();
 void commandClickHandler();
+void readData();
 
 private:
 Ui::MainWindow *ui;
 Login *olioLogin;
+QSerialPort *serialPort;
 };
 #endif // MAINWINDOW_H
