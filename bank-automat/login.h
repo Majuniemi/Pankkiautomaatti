@@ -22,13 +22,19 @@ public:
 public slots:
     void lueKortti(const QString &korttinumero);
 
+public slots:
+    void lueKortti(const QString &korttinumero);
+
 private slots:
     void numberClickHandler();
     void enterClickHandler();
     void cancelClickHandler();
     void stopClickHandler();
     void commandClickHandler();
+    void commandClickHandler();
     void loginSlot(QNetworkReply *reply);
+    void getKorttiSlot(QNetworkReply *reply);
+    void getTiliSlot(QNetworkReply *reply);
     void getKorttiSlot(QNetworkReply *reply);
     void getTiliSlot(QNetworkReply *reply);
 
@@ -37,10 +43,16 @@ private:
     QNetworkAccessManager *postManager;
     QNetworkAccessManager *getcountManager;
     QNetworkAccessManager *getoneManager;
+    QNetworkAccessManager *getcountManager;
+    QNetworkAccessManager *getoneManager;
     QNetworkReply *reply;
     QNetworkReply *replyKortti;
     QNetworkReply *replyTili;
+    QNetworkReply *replyKortti;
+    QNetworkReply *replyTili;
     QByteArray response_data;
+    QByteArray response_dataKortti;
+    QByteArray response_dataTili;
     QByteArray response_dataKortti;
     QByteArray response_dataTili;
     QByteArray token;

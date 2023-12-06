@@ -18,6 +18,9 @@ public:
     explicit Mainmenu(QWidget *parent = nullptr);
     ~Mainmenu();
 
+    void setToken(const QByteArray &newToken);
+    void setUsername(const QString &newUsername);
+
 public slots:
     void numberClickHandler();
     void commandClickHandler();
