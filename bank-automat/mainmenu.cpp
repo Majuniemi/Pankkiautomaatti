@@ -1,5 +1,6 @@
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
+#include "withdraw.h"
 
 Mainmenu::Mainmenu(QWidget *parent)
     : QDialog(parent)
@@ -61,13 +62,35 @@ void Mainmenu::commandClickHandler()
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
     if (button->objectName()=="btOption1"){
-
+        olioWithdraw = new Withdraw(this);
+        olioWithdraw->setToken(token);
+        olioWithdraw->setUsername(username);
+        olioWithdraw->onNostoButtonClicked(username);
+        olioWithdraw->onLuottorajaButtonClicked(username);
+        olioWithdraw->onNpeuroButtonClicked(username);
+        olioWithdraw->onNpprosenttiButtonClicked(username);
+        olioWithdraw->onMuuntokerroinButtonClicked(username);
+        olioWithdraw->showFullScreen();
     }
     else if (button->objectName()=="btOption2"){
-
+        olioTransfer = new Transfer(this);
+        olioTransfer->setToken(token);
+        olioTransfer->setUsername(username);
+        olioTransfer->onNostoButtonClicked(username);
+        olioTransfer->onLuottorajaButtonClicked(username);
+        olioTransfer->onNpeuroButtonClicked(username);
+        olioTransfer->onNpprosenttiButtonClicked(username);
+        olioTransfer->onMuuntokerroinButtonClicked(username);
+        olioTransfer->showFullScreen();
     }
     else if (button->objectName()=="btOption3"){
 
+        olioSaldo = new Saldo(this);
+        olioSaldo->setToken(token);
+        olioSaldo->setUsername(username);
+        olioSaldo->onSaldoButtonClicked(username);
+        olioSaldo->onValuuttaButtonClicked(username);
+        olioSaldo->showFullScreen();
     }
     else if (button->objectName()=="btOption4"){
 
@@ -93,4 +116,20 @@ void Mainmenu::commandClickHandler()
     else if (button->objectName()=="btAccept"){
 
     }
+}
+
+void Mainmenu::setUsername(const QString &newUsername)
+{
+    username = newUsername;
+    qDebug()<<"Username Mainmenu luokassa: "<<username;
+}
+
+void Mainmenu::setToken(const QByteArray &newToken)
+{
+    token = newToken;
+    qDebug()<<"Token Mainmenu luokassa: "<<&token;
+}
+void Mainmenu::showUsername()
+{
+     ui->labelInput->setText(username);
 }
