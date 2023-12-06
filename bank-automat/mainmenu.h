@@ -24,8 +24,6 @@ public:
 public slots:
     void numberClickHandler();
     void commandClickHandler();
-    void setUsername(const QString &newUsername);
-    void setToken(const QByteArray &newToken);
     void showUsername();
 
 private:
