@@ -1,0 +1,15 @@
+release/login.o
+release/main.o
+release/mainmenu.o
+release/mainwindow.o
+release/saldo.o
+release/transfer.o
+release/withdraw.o
+release/qrc_Liput.o
+release/qrc_Tausta.o
+release/moc_login.o
+release/moc_mainmenu.o
+release/moc_mainwindow.o
+release/moc_saldo.o
+release/moc_transfer.o
+release/moc_withdraw.o
