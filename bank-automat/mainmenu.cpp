@@ -1,5 +1,6 @@
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
+#include "withdraw.h"
 
 Mainmenu::Mainmenu(QWidget *parent)
     : QDialog(parent)
@@ -15,7 +16,7 @@ Mainmenu::Mainmenu(QWidget *parent)
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
     ui->labelPrompt->setText("Valitse toiminto");
-    ui->labelInput->setText(" ");
+
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -47,13 +48,7 @@ Mainmenu::~Mainmenu()
 
 void Mainmenu::numberClickHandler()
 {
-    QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-
-    if(button){
-        QLabel *currentEdit = ui->labelInput;
-        currentEdit->setText(currentEdit->text() + button->text());
-    }
 }
 
 void Mainmenu::commandClickHandler()
@@ -61,13 +56,35 @@ void Mainmenu::commandClickHandler()
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
     if (button->objectName()=="btOption1"){
-
+        olioWithdraw = new Withdraw(this);
+        olioWithdraw->setToken(token);
+        olioWithdraw->setUsername(username);
+        olioWithdraw->onNostoButtonClicked(username);
+        olioWithdraw->onLuottorajaButtonClicked(username);
+        olioWithdraw->onNpeuroButtonClicked(username);
+        olioWithdraw->onNpprosenttiButtonClicked(username);
+        olioWithdraw->onMuuntokerroinButtonClicked(username);
+        olioWithdraw->showFullScreen();
     }
     else if (button->objectName()=="btOption2"){
-
+        olioTransfer = new Transfer(this);
+        olioTransfer->setToken(token);
+        olioTransfer->setUsername(username);
+        olioTransfer->onNostoButtonClicked(username);
+        olioTransfer->onLuottorajaButtonClicked(username);
+        olioTransfer->onNpeuroButtonClicked(username);
+        olioTransfer->onNpprosenttiButtonClicked(username);
+        olioTransfer->onMuuntokerroinButtonClicked(username);
+        olioTransfer->showFullScreen();
     }
     else if (button->objectName()=="btOption3"){
 
+        olioSaldo = new Saldo(this);
+        olioSaldo->setToken(token);
+        olioSaldo->setUsername(username);
+        olioSaldo->onSaldoButtonClicked(username);
+        olioSaldo->onValuuttaButtonClicked(username);
+        olioSaldo->showFullScreen();
     }
     else if (button->objectName()=="btOption4"){
 
@@ -104,5 +121,6 @@ void Mainmenu::setUsername(const QString &newUsername)
 void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;
-    qDebug()<<"Token Mainmenu luokassa: "<<token;
+    qDebug()<<"Token Mainmenu luokassa: "<<&token;
 }
+

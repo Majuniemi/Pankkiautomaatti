@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("Kirjaudu sisään");
     ui->labelPrompt->setText("Tervetuloa!");
-    ui->labelInput->setText(" ");
+
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));          //Luodaan Signal-Slotit numeronäppäimille
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -63,13 +63,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::numberClickHandler()
 {
-    QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-
-    if(button){
-        QLabel *currentEdit = ui->labelInput;
-        currentEdit->setText(currentEdit->text() + button->text());
-    }
 }
 
 void MainWindow::commandClickHandler()
@@ -99,11 +93,11 @@ void MainWindow::commandClickHandler()
         }
         else if (button->objectName()=="btOption8"){
             olioLogin = new Login(this);
-            olioLogin->lueKortti("0600064207");
-            olioLogin->show();
+            olioLogin->lueKortti("06000649CE");
+            olioLogin->showFullScreen();
         }
         else if (button->objectName()=="btStop"){
-            close();
+                close();
         }
         else if (button->objectName()=="btCancel"){
 
@@ -127,5 +121,5 @@ void MainWindow::readData()
     //qDebug()<<"Korttinumero nyt:" << korttinumero;
     olioLogin = new Login(this);
     olioLogin->lueKortti(korttinumero);                                                         //Lähetetään korttinumero signaalissa eteenpäin
-    olioLogin->show();
+    olioLogin->showFullScreen();
 }

@@ -14,17 +14,26 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainmenu.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    saldo.cpp \
+    transfer.cpp \
+    withdraw.cpp
 
 HEADERS += \
     login.h \
     mainmenu.h \
-    mainwindow.h
+    mainwindow.h \
+    saldo.h \
+    transfer.h \
+    withdraw.h
 
 FORMS += \
     login.ui \
     mainmenu.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    saldo.ui \
+    transfer.ui \
+    withdraw.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
