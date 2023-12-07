@@ -10,12 +10,6 @@
     <height>1440</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>2560</width>
-    <height>1440</height>
-   </size>
-  </property>
   <property name="baseSize">
    <size>
     <width>2560</width>
@@ -116,6 +110,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="animated">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -125,12 +122,6 @@
       <width>2171</width>
       <height>1251</height>
      </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>2560</width>
-      <height>1440</height>
-     </size>
     </property>
     <property name="palette">
      <palette>
@@ -215,18 +206,6 @@
       <height>1440</height>
      </rect>
     </property>
-    <property name="minimumSize">
-     <size>
-      <width>2560</width>
-      <height>1440</height>
-     </size>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>2560</width>
-      <height>1440</height>
-     </size>
-    </property>
     <property name="palette">
      <palette>
       <active>
@@ -272,12 +251,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -329,12 +302,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -384,12 +351,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -441,12 +402,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -496,12 +451,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -553,12 +502,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -608,12 +551,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -665,12 +602,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -720,12 +651,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -777,12 +702,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -832,12 +751,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -889,12 +802,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -944,12 +851,6 @@
        <width>81</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1001,12 +902,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1056,12 +951,6 @@
        <width>81</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1113,12 +1002,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1169,12 +1052,6 @@
        <height>241</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -1190,12 +1067,6 @@
         <height>41</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string>Option1</string>
       </property>
@@ -1208,12 +1079,6 @@
         <width>91</width>
         <height>41</height>
        </rect>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
       </property>
       <property name="text">
        <string>Option2</string>
@@ -1228,12 +1093,6 @@
         <height>41</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string>Option4</string>
       </property>
@@ -1247,12 +1106,6 @@
         <height>41</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string>Option3</string>
       </property>
@@ -1265,12 +1118,6 @@
         <width>91</width>
         <height>41</height>
        </rect>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
       </property>
       <property name="text">
        <string>Option6</string>
@@ -1288,12 +1135,6 @@
         <height>41</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string>Option7</string>
       </property>
@@ -1309,12 +1150,6 @@
         <width>91</width>
         <height>41</height>
        </rect>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
       </property>
       <property name="text">
        <string>Option8</string>
@@ -1332,12 +1167,6 @@
         <height>41</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string>Option5</string>
       </property>
@@ -1354,12 +1183,6 @@
         <height>16</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string/>
       </property>
@@ -1372,12 +1195,6 @@
         <width>251</width>
         <height>20</height>
        </rect>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
       </property>
       <property name="text">
        <string/>
@@ -1395,12 +1212,6 @@
         <height>16</height>
        </rect>
       </property>
-      <property name="baseSize">
-       <size>
-        <width>2560</width>
-        <height>1440</height>
-       </size>
-      </property>
       <property name="text">
        <string/>
       </property>
@@ -1414,12 +1225,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1471,12 +1276,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1526,12 +1325,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1583,12 +1376,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1638,12 +1425,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1695,12 +1476,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1750,12 +1525,6 @@
        <width>41</width>
        <height>41</height>
       </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
      </property>
      <property name="palette">
       <palette>
@@ -1807,12 +1576,6 @@
        <height>41</height>
       </rect>
      </property>
-     <property name="baseSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
-     </property>
      <property name="palette">
       <palette>
        <active>
@@ -1862,7 +1625,7 @@
      <x>0</x>
      <y>0</y>
      <width>2560</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBankSimul_R9">
@@ -1872,7 +1635,6 @@
    </widget>
    <addaction name="menuBankSimul_R9"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="Tausta.qrc"/>

@@ -108,7 +108,7 @@ void Saldo::showSaldo()
 void Saldo::setToken(const QByteArray &newToken)
 {
     token = newToken;
-    qDebug()<<"Token Mainmenu luokassa: "<<&token;
+    qDebug()<<"Token Saldo luokassa: "<<token;
 }
 void Saldo::onSaldoButtonClicked(QString tilinumero)
 {

@@ -350,7 +350,7 @@ void Withdraw::onNostoButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNostoSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNostoSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -382,7 +382,7 @@ void Withdraw::onLuottorajaButtonClicked(QString tilinumero)
     qDebug()<<"Tallennettu token luokassa: "<<token;
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getLuottorajaSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getLuottorajaSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -412,7 +412,7 @@ void Withdraw::onNpeuroButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNpeuroSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNpeuroSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -439,7 +439,7 @@ void Withdraw::onNpprosenttiButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNpprosenttiSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNpprosenttiSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }

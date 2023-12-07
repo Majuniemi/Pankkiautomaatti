@@ -113,17 +113,11 @@
   <widget class="QWidget" name="centralwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>770</x>
-     <y>500</y>
+     <x>1150</x>
+     <y>650</y>
      <width>2560</width>
      <height>1440</height>
     </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>2560</width>
-     <height>1440</height>
-    </size>
    </property>
    <property name="palette">
     <palette>

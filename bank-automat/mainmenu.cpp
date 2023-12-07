@@ -64,7 +64,7 @@ void Mainmenu::commandClickHandler()
         olioWithdraw->onNpeuroButtonClicked(username);
         olioWithdraw->onNpprosenttiButtonClicked(username);
         olioWithdraw->onMuuntokerroinButtonClicked(username);
-        olioWithdraw->showFullScreen();
+        olioWithdraw->show();
     }
     else if (button->objectName()=="btOption2"){
         olioTransfer = new Transfer(this);
@@ -75,7 +75,7 @@ void Mainmenu::commandClickHandler()
         olioTransfer->onNpeuroButtonClicked(username);
         olioTransfer->onNpprosenttiButtonClicked(username);
         olioTransfer->onMuuntokerroinButtonClicked(username);
-        olioTransfer->showFullScreen();
+        olioTransfer->show();
     }
     else if (button->objectName()=="btOption3"){
 
@@ -84,7 +84,7 @@ void Mainmenu::commandClickHandler()
         olioSaldo->setUsername(username);
         olioSaldo->onSaldoButtonClicked(username);
         olioSaldo->onValuuttaButtonClicked(username);
-        olioSaldo->showFullScreen();
+        olioSaldo->show();
     }
     else if (button->objectName()=="btOption4"){
 
@@ -102,7 +102,7 @@ void Mainmenu::commandClickHandler()
 
     }
     else if (button->objectName()=="btStop"){
-
+        accept();
     }
     else if (button->objectName()=="btCancel"){
 
@@ -121,6 +121,6 @@ void Mainmenu::setUsername(const QString &newUsername)
 void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;
-    qDebug()<<"Token Mainmenu luokassa: "<<&token;
+    qDebug()<<"Token Mainmenu luokassa: "<<token;
 }
 
