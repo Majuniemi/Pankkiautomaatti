@@ -24,7 +24,6 @@ public:
 public slots:
     void numberClickHandler();
     void commandClickHandler();
-    void showUsername();
 
 private:
     Ui::Mainmenu *ui;

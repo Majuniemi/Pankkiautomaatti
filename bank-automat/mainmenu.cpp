@@ -16,7 +16,7 @@ Mainmenu::Mainmenu(QWidget *parent)
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
     ui->labelPrompt->setText("Valitse toiminto");
-    ui->labelInput->setText(" ");
+
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -48,13 +48,7 @@ Mainmenu::~Mainmenu()
 
 void Mainmenu::numberClickHandler()
 {
-    QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-
-    if(button){
-        QLabel *currentEdit = ui->labelInput;
-        currentEdit->setText(currentEdit->text() + button->text());
-    }
 }
 
 void Mainmenu::commandClickHandler()
@@ -129,7 +123,4 @@ void Mainmenu::setToken(const QByteArray &newToken)
     token = newToken;
     qDebug()<<"Token Mainmenu luokassa: "<<&token;
 }
-void Mainmenu::showUsername()
-{
-     ui->labelInput->setText(username);
-}
+
