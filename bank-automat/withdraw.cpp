@@ -378,6 +378,8 @@ void Withdraw::onLuottorajaButtonClicked(QString tilinumero)
     //WEBTOKEN ALKU
     request.setRawHeader(QByteArray("Authorization"),(token));
     //WEBTOKEN LOPPU
+
+    qDebug()<<"Tallennettu token luokassa: "<<token;
     getManager = new QNetworkAccessManager(this);
 
     connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getLuottorajaSlot(QNetworkReply*)));
@@ -492,7 +494,9 @@ void Withdraw::upSaldo(QString id, QString newSaldo) {
     QNetworkRequest request((site_url));
 
     request.setRawHeader(QByteArray("Content-Type"), "application/json");
-
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
     QNetworkAccessManager* manager = new QNetworkAccessManager(this);
 
     connect(manager, &QNetworkAccessManager::finished, [=](QNetworkReply* reply) {
@@ -535,7 +539,9 @@ void Withdraw::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QStri
     QUrl url("http://localhost:3000/Tili/uusiTilitapahtuma");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
     QUrlQuery postData;
     postData.addQueryItem("Aikaleima", aikaleima.toString(Qt::ISODate));
     postData.addQueryItem("Saldomuutos", saldoMuutos);

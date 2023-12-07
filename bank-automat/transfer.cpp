@@ -319,6 +319,9 @@ void Transfer::upSaldo(QString id, QString newSaldo) {
     request.setRawHeader(QByteArray("Content-Type"), "application/json");
 
     QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
 
     connect(manager, &QNetworkAccessManager::finished, [=](QNetworkReply* reply) {
         if (reply->error() == QNetworkReply::NoError) {
@@ -400,8 +403,11 @@ void Transfer::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QStri
 
     QUrl url("http://localhost:3000/Tili/uusiTilitapahtuma");
     QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
     QUrlQuery postData;
     postData.addQueryItem("Aikaleima", aikaleima.toString(Qt::ISODate));
     postData.addQueryItem("Saldomuutos", saldoMuutos);
