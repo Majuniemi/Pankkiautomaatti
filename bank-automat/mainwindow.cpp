@@ -99,11 +99,11 @@ void MainWindow::commandClickHandler()
         }
         else if (button->objectName()=="btOption8"){
             olioLogin = new Login(this);
-            olioLogin->lueKortti("0000000011111111");
-            olioLogin->show();
+            olioLogin->lueKortti("06000649CE");
+            olioLogin->showFullScreen();
         }
         else if (button->objectName()=="btStop"){
-            close();
+                close();
         }
         else if (button->objectName()=="btCancel"){
 

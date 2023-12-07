@@ -22,6 +22,7 @@ public:
 public slots:
     void lueKortti(const QString &korttinumero);
 
+
 private slots:
     void numberClickHandler();
     void enterClickHandler();
@@ -46,6 +47,7 @@ private:
     QByteArray token;
     Mainmenu *olioMainmenu;
     QString username;
+    QString saldo;
 };
 
 #endif // LOGIN_H
