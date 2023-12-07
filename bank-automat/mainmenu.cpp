@@ -85,7 +85,7 @@ void Mainmenu::commandClickHandler()
 
     }
     else if (button->objectName()=="btStop"){
-        accept();
+
     }
     else if (button->objectName()=="btCancel"){
 
