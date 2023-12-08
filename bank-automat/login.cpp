@@ -10,7 +10,7 @@ Login::Login(QWidget *parent)
     ui->labelOption2->setText(" ");
     ui->labelOption3->setText(" ");
     ui->labelOption4->setText(" ");
-    ui->labelOption5->setText("Language");
+    ui->labelOption5->setText(" ");
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText(" ");
@@ -165,7 +165,7 @@ void Login::getKorttiSlot(QNetworkReply *reply)
         ui->labelOption2->setText(" ");
         ui->labelOption3->setText("Credit");
         ui->labelOption4->setText(" ");
-        ui->labelOption5->setText("Language");
+        ui->labelOption5->setText("");
         ui->labelOption6->setText(" ");
         ui->labelOption7->setText("Debit");
         ui->labelOption8->setText(" ");
@@ -188,7 +188,7 @@ void Login::getKorttiSlot(QNetworkReply *reply)
         ui->labelOption2->setText(" ");
         ui->labelOption3->setText("");
         ui->labelOption4->setText(" ");
-        ui->labelOption5->setText("Language");
+        ui->labelOption5->setText("");
         ui->labelOption6->setText(" ");
         ui->labelOption7->setText("");
         ui->labelOption8->setText(" ");
@@ -217,6 +217,7 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu = new Mainmenu(this);
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
+        olioMainmenu->setKieli(kieli);
         olioMainmenu->showFullScreen();                                                       //Avataan Mainmenu-olion ikkuna
         accept();                                                                   //Suljetaan Login-olion ikkuna
     }
@@ -226,4 +227,9 @@ void Login::getTiliSlot(QNetworkReply *reply)
 
     reply->deleteLater();                                                           //Poistetaan oliot ja pidetään huolta muistinhallinnasta
     getoneManager->deleteLater();
+}
+void Login::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
 }

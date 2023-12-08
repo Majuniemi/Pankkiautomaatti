@@ -208,8 +208,8 @@
   <widget class="QWidget" name="centralwidget_2" native="true">
    <property name="geometry">
     <rect>
-     <x>1160</x>
-     <y>650</y>
+     <x>1140</x>
+     <y>670</y>
      <width>2560</width>
      <height>1440</height>
     </rect>

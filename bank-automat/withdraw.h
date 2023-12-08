@@ -21,7 +21,7 @@ public:
     ~Withdraw();
 
 public slots:
-
+    void setKieli(const int &newKieli);
     void commandClickHandler();
     void numberClickHandler();
     void setToken(const QByteArray &newToken);
@@ -69,6 +69,7 @@ private:
     int muusumma=0;
     QByteArray token;
     QDateTime aikaleima;
+    int kieli;
 };
 
 #endif // WITHDRAW_H

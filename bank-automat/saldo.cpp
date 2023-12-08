@@ -21,9 +21,6 @@ Saldo::Saldo(QWidget *parent) :
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
-    ui->labelPrompt->setText("Tilin saldo on");
-
-
 
 
     connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
@@ -119,7 +116,7 @@ void Saldo::onSaldoButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getSaldoSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getSaldoSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -157,7 +154,7 @@ void Saldo::onValuuttaButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getValuuttaSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getValuuttaSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -173,3 +170,18 @@ void Saldo::getValuuttaSlot(QNetworkReply *reply)
     reply->deleteLater();
     getManager->deleteLater();
    }
+void Saldo::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli Saldo luokassa: "<<kieli;
+    if (kieli==1){
+    ui->labelPrompt->setText("Tilin saldo on");
+    }else if (kieli==2){
+    ui->labelPrompt->setText("Kontosaldot är");
+    }else if (kieli==3){
+        ui->labelPrompt->setText("The account balance is");
+    }else{
+        ui->labelPrompt->setText("The account balance is");
+         qDebug()<<"Kieli ui:ssa saldo luokassa: "<<kieli;
+    }
+}
