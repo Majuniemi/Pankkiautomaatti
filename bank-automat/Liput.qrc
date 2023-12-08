@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/liput">
+        <file>Liput/Brittilippu.png</file>
+        <file>Liput/Ruotsinlippu.png</file>
+        <file>Liput/Suomenlippu.png</file>
+    </qresource>
+</RCC>
