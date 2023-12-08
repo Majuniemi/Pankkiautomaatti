@@ -21,6 +21,7 @@ public:
     ~Transfer();
 
 public slots:
+    void setKieli(const int &newKieli);
     void numberClickHandler();
     void commandClickHandler();
     void setToken(const QByteArray &newToken);
@@ -60,6 +61,7 @@ private:
     double tilimiinus;
     QByteArray token;
     QDateTime aikaleima;
+    int kieli;
 };
 
 #endif // TRANSFER_H

@@ -119,8 +119,8 @@
   <widget class="QWidget" name="centralwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>1160</x>
-     <y>650</y>
+     <x>1140</x>
+     <y>670</y>
      <width>2560</width>
      <height>1440</height>
     </rect>
@@ -1812,8 +1812,8 @@
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>-20</x>
+     <y>20</y>
      <width>800</width>
      <height>21</height>
     </rect>
@@ -1834,8 +1834,8 @@
   <widget class="QStatusBar" name="statusbar">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>-20</x>
+     <y>20</y>
      <width>3</width>
      <height>27</height>
     </rect>

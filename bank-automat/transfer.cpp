@@ -6,7 +6,7 @@ Transfer::Transfer(QWidget *parent)
     , ui(new Ui::Transfer)
 {
     ui->setupUi(this);
-    ui->labelOption1->setText(" ");
+/*    ui->labelOption1->setText(" ");
     ui->labelOption2->setText(" ");
     ui->labelOption3->setText(" ");
     ui->labelOption4->setText(" ");
@@ -15,7 +15,7 @@ Transfer::Transfer(QWidget *parent)
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
     ui->labelPrompt->setText("Syötä tili jolle haluat siirtää rahaa");
-    ui->labelInput->setText(" ");
+    ui->labelInput->setText(" ");*/
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -234,7 +234,7 @@ void Transfer::onNpeuroButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNpeuroSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNpeuroSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -261,7 +261,7 @@ void Transfer::onNpprosenttiButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNpprosenttiSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNpprosenttiSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -289,7 +289,7 @@ void Transfer::onMuuntokerroinButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getMuuntokerroinSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getMuuntokerroinSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -350,7 +350,7 @@ void Transfer::onTiliButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
     qDebug() << "tilinumero kyselyssä: " << tilinumero;
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getTiliSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getTiliSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -417,4 +417,55 @@ void Transfer::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QStri
 
     QByteArray postDataByteArray = postData.toString(QUrl::FullyEncoded).toUtf8();
     manager->post(request, postDataByteArray);
+}
+void Transfer::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli transfer luokassa: "<<kieli;
+    if (kieli==1){
+        ui->labelOption1->setText(" ");
+           ui->labelOption2->setText(" ");
+           ui->labelOption3->setText(" ");
+           ui->labelOption4->setText(" ");
+           ui->labelOption5->setText(" ");
+           ui->labelOption6->setText(" ");
+           ui->labelOption7->setText(" ");
+           ui->labelOption8->setText("");
+           ui->labelPrompt->setText("Syötä tili jolle haluat siirtää rahaa");
+           ui->labelInput->setText(" ");
+    }else if (kieli==2){
+        ui->labelOption1->setText(" ");
+           ui->labelOption2->setText(" ");
+           ui->labelOption3->setText(" ");
+           ui->labelOption4->setText(" ");
+           ui->labelOption5->setText(" ");
+           ui->labelOption6->setText(" ");
+           ui->labelOption7->setText(" ");
+           ui->labelOption8->setText("");
+           ui->labelPrompt->setText("Ange kontot som du vill överföra pengar till");
+           ui->labelInput->setText(" ");
+    }else if (kieli==3){
+        ui->labelOption1->setText(" ");
+           ui->labelOption2->setText(" ");
+           ui->labelOption3->setText(" ");
+           ui->labelOption4->setText(" ");
+           ui->labelOption5->setText(" ");
+           ui->labelOption6->setText(" ");
+           ui->labelOption7->setText(" ");
+           ui->labelOption8->setText("");
+           ui->labelPrompt->setText("Enter the account of recipient");
+           ui->labelInput->setText(" ");
+    }else{
+         qDebug()<<"Kieli ui:ssa Mainmenu luokassa: "<<kieli;
+         ui->labelOption1->setText(" ");
+            ui->labelOption2->setText(" ");
+            ui->labelOption3->setText(" ");
+            ui->labelOption4->setText(" ");
+            ui->labelOption5->setText(" ");
+            ui->labelOption6->setText(" ");
+            ui->labelOption7->setText(" ");
+            ui->labelOption8->setText("");
+            ui->labelPrompt->setText("Enter the account of recipient");
+            ui->labelInput->setText(" ");
+    }
 }

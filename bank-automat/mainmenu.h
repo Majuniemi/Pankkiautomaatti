@@ -20,6 +20,7 @@ public:
 
     void setToken(const QByteArray &newToken);
     void setUsername(const QString &newUsername);
+    void setKieli(const int &newKieli);
 
 public slots:
     void numberClickHandler();
@@ -37,6 +38,7 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+    int kieli;
 };
 
 #endif // MAINMENU_H
