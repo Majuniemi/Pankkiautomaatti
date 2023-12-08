@@ -10,7 +10,7 @@ Login::Login(QWidget *parent)
     ui->labelOption2->setText(" ");
     ui->labelOption3->setText(" ");
     ui->labelOption4->setText(" ");
-    ui->labelOption5->setText("Language");
+    ui->labelOption5->setText(" ");
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText(" ");
@@ -84,6 +84,7 @@ void Login::cancelClickHandler()
 
 void Login::stopClickHandler()
 {
+    emit logoutRequested();
     accept();                                                                       //Sulkee X näppäintä painettaessa Login-ikkunan
 }
 
@@ -136,6 +137,7 @@ void Login::loginSlot(QNetworkReply *reply)
                 getcountManager = new QNetworkAccessManager(this);
                 connect(getcountManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getKorttiSlot(QNetworkReply*)));   //Signal-Slot, joka vie operaation valmistuttua getKorttiSlotiin
                 replyKortti = getcountManager->get(request);                        //Lähetetään Get-pyyntö palvelimelle ja tallennetaan vastaus replyKortti jäsenmuuttujaan
+                ui->lineEditPassword->clear();
             }
             else{
                 qDebug()<<"Korttinumero tai PIN-koodi väärin";
