@@ -218,6 +218,7 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
         olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
+        connect(olioMainmenu, &Mainmenu::logoutRequested, this, &Login::handleLogout);
         accept();                                                                   //Suljetaan Login-olion ikkuna
     }
     else {
@@ -226,4 +227,11 @@ void Login::getTiliSlot(QNetworkReply *reply)
 
     reply->deleteLater();                                                           //Poistetaan oliot ja pidetään huolta muistinhallinnasta
     getoneManager->deleteLater();
+}
+
+void Login::handleLogout()
+{
+    emit logoutRequested();
+    //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
+
 }

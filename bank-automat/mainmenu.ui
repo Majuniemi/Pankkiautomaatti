@@ -2,9 +2,6 @@
 <ui version="4.0">
  <class>Mainmenu</class>
  <widget class="QDialog" name="Mainmenu">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -112,9 +109,6 @@
   </property>
   <property name="windowTitle">
    <string>Mainmenu</string>
-  </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">

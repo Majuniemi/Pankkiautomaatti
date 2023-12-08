@@ -102,6 +102,7 @@ void Mainmenu::commandClickHandler()
 
     }
     else if (button->objectName()=="btStop"){
+        emit logoutRequested();
         accept();
     }
     else if (button->objectName()=="btCancel"){

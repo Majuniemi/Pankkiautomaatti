@@ -32,6 +32,10 @@ private slots:
     void loginSlot(QNetworkReply *reply);
     void getKorttiSlot(QNetworkReply *reply);
     void getTiliSlot(QNetworkReply *reply);
+    void handleLogout();
+
+signals:
+    void logoutRequested();
 
 private:
     Ui::Login *ui;

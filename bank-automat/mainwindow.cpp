@@ -42,18 +42,31 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
 
-    serialPort = new QSerialPort(this);                                                 //Luodaan sarjamonitoriyhteys, jotta voidaan lukea RFID lukijalla tägin tiedot Qt:ssa.
-    serialPort->setPortName("/dev/tty.usbmodem13101");          //HUOMIOI TÄMÄ!         //Vaihda tähän lukijan sarjaportin nimi
+    serialPort = new QSerialPort(this);                                                 //Luodaan sarjamonitoriyhteys, jotta voidaan lukea RFID lukijalla tägin tiedot Qt:ssa
+    QSerialPortInfo valittuPortti;
+    foreach (const QSerialPortInfo &portInfo, QSerialPortInfo::availablePorts()) {      //Luetaan sarjaporteissa olevia laitteita ja valitaan niistä Olimex merkin laite
+        if (portInfo.manufacturer() == "Olimex Ltd.") {
+            valittuPortti = portInfo;
+            break;
+        }
+    }
+    if (!valittuPortti.isNull()) {
+        serialPort->setPortName(valittuPortti.portName());                               // Käytetään ylläolevilla ehdoilla löydettyä sarjaporttia
+    } else {
+        qDebug() << "RFID-lukijaa ei löytynyt.";
+    }
     serialPort->setBaudRate(QSerialPort::Baud9600);                                     //Asettaa baudinopeuden 9600 bit/sek
     serialPort->setDataBits(QSerialPort::Data8);                                        //Asettaa bittien määrän 8:n bittiin
     serialPort->setParity(QSerialPort::NoParity);                                       //Asettaa pariteetin Ei-tilaan
     serialPort->setStopBits(QSerialPort::OneStop);                                      //Asettaa stopbittien määräksi 1
-    if (serialPort->open(QIODevice::ReadWrite)) {                                       //Tulostaa debug tietona, että onnistuuko sarjaportin yhteys.
-        qDebug() << "Sarjaportti avattu onnistuneesti";
-    } else {
-        qDebug() << "Sarjaportin yhdistämisessä virhe: " << serialPort->errorString();
-    }
-    connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);          //Siirtyy readData-slottiin, kun RFID-lukija lukee tiedon
+        if (serialPort->open(QIODevice::ReadWrite)) {                                   //Tulostaa debug tietona, että onnistuuko sarjaportin yhteys.
+            qDebug() << "Sarjaportti avattu onnistuneesti";
+        } else {
+            qDebug() << "Sarjaportin yhdistämisessä virhe: " << serialPort->errorString();
+        }
+        qDebug()<<"Sarjaportin nimi on: "<< valittuPortti.portName();
+
+        connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);          //Siirtyy readData-slottiin, kun RFID-lukija lukee tiedon
 }
 
 MainWindow::~MainWindow()
@@ -94,7 +107,7 @@ void MainWindow::commandClickHandler()
         else if (button->objectName()=="btOption8"){
             olioLogin = new Login(this);
             olioLogin->lueKortti("06000649CE");
-            olioLogin->showFullScreen();
+            olioLogin->show();
         }
         else if (button->objectName()=="btStop"){
                 close();
@@ -109,17 +122,30 @@ void MainWindow::commandClickHandler()
 
 void MainWindow::readData()
 {
-    QString RFIDtieto = serialPort->readAll();                                                  //Luetaan RFID-tägin sisältämä tieto
-    //qDebug()<<"Kortinlukija luki:" << RFIDtieto;
+    if (!kirjautunut) {
+        QString RFIDtieto = serialPort->readAll();                                          //Luetaan RFID-tägin sisältämä tieto
+        //qDebug()<<"Kortinlukija luki:" << RFIDtieto;
 
-    QString korttinumero;
-    for (const QChar &ch : RFIDtieto) {                                                         //Siivotaan ylimääräiset merkit vastauksena tulleesta tiedosta, jäljelle jää pelkkä korttinumero
-    if (ch.isDigit() || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f')) {
-        korttinumero.append(ch);
+        QString korttinumero;
+        for (const QChar &ch : RFIDtieto) {                                                 //Siivotaan ylimääräiset merkit vastauksena tulleesta tiedosta, jäljelle jää pelkkä korttinumero
+            if (ch.isDigit() || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f')) {
+                korttinumero.append(ch);
+            }
         }
+        //qDebug()<<"Korttinumero nyt:" << korttinumero;
+        olioLogin = new Login(this);
+        olioLogin->lueKortti(korttinumero);                                                 //Lähetetään korttinumero signaalissa eteenpäin
+        olioLogin->show();
+        connect(olioLogin, &Login::logoutRequested, this, &MainWindow::handleLogout);
+        kirjautunut = true;
+        RFIDtieto = "";
+
     }
-    //qDebug()<<"Korttinumero nyt:" << korttinumero;
-    olioLogin = new Login(this);
-    olioLogin->lueKortti(korttinumero);                                                         //Lähetetään korttinumero signaalissa eteenpäin
-    olioLogin->show();
+
+}
+
+void MainWindow::handleLogout()
+{
+    kirjautunut=false;
+    //qDebug()<<"Päästiin MainWindow luokassa handleLogouttiin";
 }
