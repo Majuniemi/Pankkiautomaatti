@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Mainmenu</class>
- <widget class="QDialog" name="Mainmenu">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
+ <class>Transfer</class>
+ <widget class="QDialog" name="Transfer">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,12 +11,6 @@
    </rect>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>2560</width>
-    <height>1440</height>
-   </size>
-  </property>
-  <property name="baseSize">
    <size>
     <width>2560</width>
     <height>1440</height>
@@ -117,100 +108,8 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Mainmenu</string>
+   <string>Dialog</string>
   </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
-  </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>180</y>
-     <width>2171</width>
-     <height>1251</height>
-    </rect>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>2560</width>
-     <height>1440</height>
-    </size>
-   </property>
-   <property name="palette">
-    <palette>
-     <active>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>191</red>
-         <green>191</green>
-         <blue>191</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Highlight">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>231</red>
-         <green>215</green>
-         <blue>199</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </active>
-     <inactive>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>191</red>
-         <green>191</green>
-         <blue>191</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Highlight">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>231</red>
-         <green>215</green>
-         <blue>199</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </inactive>
-     <disabled>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>191</red>
-         <green>191</green>
-         <blue>191</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Highlight">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>0</red>
-         <green>120</green>
-         <blue>215</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </disabled>
-    </palette>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="Tausta.qrc">:/Tausta/Taustakuva.jpg</pixmap>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QWidget" name="centralwidget_2" native="true">
    <property name="geometry">
     <rect>
@@ -1410,6 +1309,32 @@
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="labelInput_2">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>120</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>FI</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInput">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>120</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>input</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="btOption4">
     <property name="geometry">
@@ -1860,6 +1785,97 @@
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>180</y>
+     <width>2171</width>
+     <height>1251</height>
+    </rect>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>2560</width>
+     <height>1440</height>
+    </size>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>191</red>
+         <green>191</green>
+         <blue>191</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Highlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>231</red>
+         <green>215</green>
+         <blue>199</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>191</red>
+         <green>191</green>
+         <blue>191</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Highlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>231</red>
+         <green>215</green>
+         <blue>199</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>191</red>
+         <green>191</green>
+         <blue>191</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Highlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>120</green>
+         <blue>215</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="Tausta.qrc">:/Tausta/Taustakuva.jpg</pixmap>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>centralwidget_2</zorder>
  </widget>
  <resources>
   <include location="Tausta.qrc"/>
