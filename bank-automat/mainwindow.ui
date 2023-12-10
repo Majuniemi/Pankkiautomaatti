@@ -200,8 +200,8 @@
    <widget class="QWidget" name="centralwidget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>1160</x>
-      <y>630</y>
+      <x>1140</x>
+      <y>650</y>
       <width>2560</width>
       <height>1440</height>
      </rect>
@@ -1120,7 +1120,13 @@
        </rect>
       </property>
       <property name="text">
-       <string>Option6</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Liput.qrc">:/liput/Liput/Ruotsinlippu.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1136,7 +1142,13 @@
        </rect>
       </property>
       <property name="text">
-       <string>Option7</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Liput.qrc">:/liput/Liput/Brittilippu.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1168,7 +1180,13 @@
        </rect>
       </property>
       <property name="text">
-       <string>Option5</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Liput.qrc">:/liput/Liput/Suomenlippu.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1190,10 +1208,10 @@
      <widget class="QLabel" name="labelPrompt">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>251</width>
-        <height>20</height>
+        <x>70</x>
+        <y>100</y>
+        <width>131</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -1204,16 +1222,41 @@
       </property>
      </widget>
      <widget class="QLabel" name="labelUser">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>60</x>
         <y>90</y>
-        <width>141</width>
-        <height>16</height>
+        <width>4</width>
+        <height>12</height>
        </rect>
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelInput">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>251</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>2560</width>
+        <height>1440</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>input</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -1637,6 +1680,7 @@
   </widget>
  </widget>
  <resources>
+  <include location="Liput.qrc"/>
   <include location="Tausta.qrc"/>
  </resources>
  <connections/>

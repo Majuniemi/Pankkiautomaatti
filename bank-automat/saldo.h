@@ -21,7 +21,7 @@ public:
 
 
 public slots:
-
+    void setKieli(const int &newKieli);
     void commandClickHandler();
     void setToken(const QByteArray &newToken);
 
@@ -49,6 +49,7 @@ private:
  /*   QString saldo;
     QString valuutta;*/
     QByteArray token;
+    int kieli;
 };
 
 #endif // SALDO_H

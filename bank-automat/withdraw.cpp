@@ -6,7 +6,7 @@ Withdraw::Withdraw(QWidget *parent) :
     ui(new Ui::Withdraw)
 {
     ui->setupUi(this);
-    ui->labelOption1->setText("20 euro");
+/*  ui->labelOption1->setText("20 euro");
     ui->labelOption2->setText("40 euro");
     ui->labelOption3->setText("50 euro");
     ui->labelOption4->setText("80 euro");
@@ -16,7 +16,7 @@ Withdraw::Withdraw(QWidget *parent) :
     ui->labelOption8->setText("muu");
     ui->labelPrompt->setText("Valitse summa");
     ui->labelInput->setText(" ");
-
+*/
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum3,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -467,7 +467,7 @@ void Withdraw::onMuuntokerroinButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getMuuntokerroinSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getMuuntokerroinSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -551,4 +551,55 @@ void Withdraw::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QStri
 
     QByteArray postDataByteArray = postData.toString(QUrl::FullyEncoded).toUtf8();
     manager->post(request, postDataByteArray);
+}
+void Withdraw::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli withdraw luokassa: "<<kieli;
+    if (kieli==1){
+        ui->labelOption1->setText("20 euro");
+        ui->labelOption2->setText("40 euro");
+        ui->labelOption3->setText("50 euro");
+        ui->labelOption4->setText("80 euro");
+        ui->labelOption5->setText("100 euro");
+        ui->labelOption6->setText("120 euro");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("Muu");
+        ui->labelPrompt->setText("Valitse summa");
+        ui->labelInput->setText(" ");
+    }else if (kieli==2){
+        ui->labelOption1->setText("20 euro");
+        ui->labelOption2->setText("40 euro");
+        ui->labelOption3->setText("50 euro");
+        ui->labelOption4->setText("80 euro");
+        ui->labelOption5->setText("100 euro");
+        ui->labelOption6->setText("120 euro");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("Andra");
+        ui->labelPrompt->setText("Välj ett belopp");
+        ui->labelInput->setText(" ");
+    }else if (kieli==3){
+        ui->labelOption1->setText("20 euro");
+        ui->labelOption2->setText("40 euro");
+        ui->labelOption3->setText("50 euro");
+        ui->labelOption4->setText("80 euro");
+        ui->labelOption5->setText("100 euro");
+        ui->labelOption6->setText("120 euro");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("Custom");
+        ui->labelPrompt->setText("Select an amount");
+        ui->labelInput->setText(" ");
+    }else{
+        ui->labelOption1->setText("20 euro");
+        ui->labelOption2->setText("40 euro");
+        ui->labelOption3->setText("50 euro");
+        ui->labelOption4->setText("80 euro");
+        ui->labelOption5->setText("100 euro");
+        ui->labelOption6->setText("120 euro");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("Custom");
+        ui->labelPrompt->setText("Select an amount");
+        ui->labelInput->setText(" ");
+         qDebug()<<"Kieli ui:ssa nosto luokassa: "<<kieli;
+    }
 }

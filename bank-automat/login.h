@@ -20,8 +20,8 @@ public:
     ~Login();
 
 public slots:
+    void setKieli(const int &newKieli);
     void lueKortti(const QString &korttinumero);
-
 
 private slots:
     void numberClickHandler();
@@ -36,6 +36,7 @@ private slots:
 
 signals:
     void logoutRequested();
+
 
 private:
     Ui::Login *ui;
@@ -52,6 +53,7 @@ private:
     Mainmenu *olioMainmenu;
     QString username;
     QString saldo;
+    int kieli;
 };
 
 #endif // LOGIN_H

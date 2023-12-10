@@ -1566,8 +1566,8 @@
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>-20</x>
+     <y>20</y>
      <width>800</width>
      <height>21</height>
     </rect>
@@ -1582,8 +1582,8 @@
   <widget class="QStatusBar" name="statusbar">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>-20</x>
+     <y>20</y>
      <width>3</width>
      <height>27</height>
     </rect>

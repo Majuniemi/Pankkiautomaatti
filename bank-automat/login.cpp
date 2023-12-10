@@ -167,7 +167,7 @@ void Login::getKorttiSlot(QNetworkReply *reply)
         ui->labelOption2->setText(" ");
         ui->labelOption3->setText("Credit");
         ui->labelOption4->setText(" ");
-        ui->labelOption5->setText("Language");
+        ui->labelOption5->setText("");
         ui->labelOption6->setText(" ");
         ui->labelOption7->setText("Debit");
         ui->labelOption8->setText(" ");
@@ -190,7 +190,7 @@ void Login::getKorttiSlot(QNetworkReply *reply)
         ui->labelOption2->setText(" ");
         ui->labelOption3->setText("");
         ui->labelOption4->setText(" ");
-        ui->labelOption5->setText("Language");
+        ui->labelOption5->setText("");
         ui->labelOption6->setText(" ");
         ui->labelOption7->setText("");
         ui->labelOption8->setText(" ");
@@ -221,6 +221,8 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
         olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
         connect(olioMainmenu, &Mainmenu::logoutRequested, this, &Login::handleLogout);
+        olioMainmenu->setKieli(kieli);
+        olioMainmenu->showFullScreen();                                                       //Avataan Mainmenu-olion ikkuna
         accept();                                                                   //Suljetaan Login-olion ikkuna
     }
     else {
@@ -236,4 +238,8 @@ void Login::handleLogout()
     emit logoutRequested();
     //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
 
+void Login::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
 }

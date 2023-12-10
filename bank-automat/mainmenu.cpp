@@ -7,16 +7,17 @@ Mainmenu::Mainmenu(QWidget *parent)
     , ui(new Ui::Mainmenu)
 {
     ui->setupUi(this);
+    /*
     ui->labelOption1->setText("Nosta rahaa");
     ui->labelOption2->setText("Tilisiirto");
     ui->labelOption3->setText("Saldo");
     ui->labelOption4->setText("Tilitapahtumat");
-    ui->labelOption5->setText("Language");
+    ui->labelOption5->setText("");
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
     ui->labelPrompt->setText("Valitse toiminto");
-
+*/
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -59,6 +60,7 @@ void Mainmenu::commandClickHandler()
         olioWithdraw = new Withdraw(this);
         olioWithdraw->setToken(token);
         olioWithdraw->setUsername(username);
+        olioWithdraw->setKieli(kieli);
         olioWithdraw->onNostoButtonClicked(username);
         olioWithdraw->onLuottorajaButtonClicked(username);
         olioWithdraw->onNpeuroButtonClicked(username);
@@ -70,6 +72,7 @@ void Mainmenu::commandClickHandler()
         olioTransfer = new Transfer(this);
         olioTransfer->setToken(token);
         olioTransfer->setUsername(username);
+        olioTransfer->setKieli(kieli);
         olioTransfer->onNostoButtonClicked(username);
         olioTransfer->onLuottorajaButtonClicked(username);
         olioTransfer->onNpeuroButtonClicked(username);
@@ -81,7 +84,8 @@ void Mainmenu::commandClickHandler()
 
         olioSaldo = new Saldo(this);
         olioSaldo->setToken(token);
-        olioSaldo->setUsername(username);
+        olioSaldo->setUsername(username);   
+        olioSaldo->setKieli(kieli);
         olioSaldo->onSaldoButtonClicked(username);
         olioSaldo->onValuuttaButtonClicked(username);
         olioSaldo->show();
@@ -125,3 +129,42 @@ void Mainmenu::setToken(const QByteArray &newToken)
     qDebug()<<"Token Mainmenu luokassa: "<<token;
 }
 
+void Mainmenu::setKieli(const int &newKieli)
+{
+    kieli = newKieli;
+    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
+    if (kieli==1){
+        ui->labelOption1->setText("Nosta rahaa");
+        ui->labelOption2->setText("Tilisiirto");
+        ui->labelOption3->setText("Saldo");
+        ui->labelOption4->setText("Tilitapahtumat");
+        ui->labelOption5->setText("");
+        ui->labelOption6->setText(" ");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("");
+        ui->labelPrompt->setText("Valitse toiminto");
+    }else if (kieli==2){
+        ui->labelOption1->setText("Uttag");
+        ui->labelOption2->setText("Banköverföring");
+        ui->labelOption3->setText("Balans");
+        ui->labelOption4->setText("Kontotransaktioner");
+        ui->labelOption5->setText("");
+        ui->labelOption6->setText(" ");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("");
+        ui->labelPrompt->setText("Välj en åtgärd");
+    }else if (kieli==3){
+        ui->labelOption1->setText("Withdraw");
+        ui->labelOption2->setText("Transfer");
+        ui->labelOption3->setText("Account balance");
+        ui->labelOption4->setText("Account Transactions");
+        ui->labelOption5->setText("");
+        ui->labelOption6->setText(" ");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("");
+        ui->labelPrompt->setText("Select an action");
+    }else{
+        ui->labelPrompt->setText("The account balance is");
+         qDebug()<<"Kieli ui:ssa Mainmenu luokassa: "<<kieli;
+    }
+}
