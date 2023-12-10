@@ -241,5 +241,5 @@ void Login::handleLogout()
 void Login::setKieli(const int &newKieli)
 {
     kieli = newKieli;
-    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
+    qDebug()<<"Kieli Login luokassa: "<<kieli;
 }

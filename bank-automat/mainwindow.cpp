@@ -199,6 +199,7 @@ void MainWindow::readData()
         //qDebug()<<"RFIDtieto nyt: "<<RFIDtieto;
         olioLogin = new Login(this);
         olioLogin->lueKortti(korttinumero);                                             //Lähetetään korttinumero signaalissa eteenpäin
+        olioLogin->setKieli(kieli);
         olioLogin->show();
         connect(olioLogin, &Login::logoutRequested, this, &MainWindow::handleLogout);   //Kun Login luokan logoutReq signaali tulee, niin siirrytään handleLogouttiin
         kirjautunut = true;                                                             //Vaihdetaan kirjautunut tieto "sisäänkirjautuneeksi"
