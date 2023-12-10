@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Mainmenu</class>
- <widget class="QDialog" name="Mainmenu">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
+ <class>Withdraw</class>
+ <widget class="QDialog" name="Withdraw">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -117,10 +114,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Mainmenu</string>
-  </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
+   <string>Dialog</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -1408,6 +1402,38 @@
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInput2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInput">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>120</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>input</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

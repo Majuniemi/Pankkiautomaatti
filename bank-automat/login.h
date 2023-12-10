@@ -20,6 +20,7 @@ public:
     ~Login();
 
 public slots:
+    void setKieli(const int &newKieli);
     void lueKortti(const QString &korttinumero);
 
 private slots:
@@ -31,6 +32,7 @@ private slots:
     void loginSlot(QNetworkReply *reply);
     void getKorttiSlot(QNetworkReply *reply);
     void getTiliSlot(QNetworkReply *reply);
+
 
 private:
     Ui::Login *ui;
@@ -46,6 +48,8 @@ private:
     QByteArray token;
     Mainmenu *olioMainmenu;
     QString username;
+    QString saldo;
+    int kieli;
 };
 
 #endif // LOGIN_H
