@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/Napit">
+        <file>5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</file>
+        <file>233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</file>
+        <file>802713C5-D109-4182-83B7-935E8F95A7BC.jpg</file>
+        <file>IMG_8583.jpg</file>
+        <file>IMG_8584.jpg</file>
+        <file>IMG_8585.jpg</file>
+        <file>IMG_8590.jpg</file>
+        <file>IMG_8589.jpg</file>
+        <file>IMG_8588.jpg</file>
+        <file>IMG_8587.jpg</file>
+        <file>IMG_8586.jpg</file>
+        <file>IMG_8591.jpg</file>
+        <file>IMG_8597.jpg</file>
+        <file>IMG_8619.JPG</file>
+        <file>IMG_8615.jpg</file>
+        <file>IMG_8616.jpg</file>
+    </qresource>
+</RCC>
