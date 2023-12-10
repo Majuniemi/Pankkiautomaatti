@@ -139,10 +139,10 @@ void MainWindow::commandClickHandler()
         }
         else if (button->objectName() == "btOption7")
         {
-            //   translateTo("en");
-               // Englannin käännös
-           //    ui->labelOption5->setText("");
-           //    ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
+            //  translateTo("en");
+            //  Englannin käännös
+            //  ui->labelOption5->setText("");
+            //  ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
                ui->labelOption8->setText("Log in");
                ui->labelPrompt->setText("Welcome!");
                ui->labelOption5->setText(" ");

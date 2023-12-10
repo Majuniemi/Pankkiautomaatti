@@ -237,7 +237,7 @@ void Login::handleLogout()
 {
     emit logoutRequested();
     //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
-
+}
 void Login::setKieli(const int &newKieli)
 {
     kieli = newKieli;
