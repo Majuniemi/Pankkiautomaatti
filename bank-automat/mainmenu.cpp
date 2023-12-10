@@ -91,7 +91,8 @@ void Mainmenu::commandClickHandler()
         olioSaldo->show();
     }
     else if (button->objectName()=="btOption4"){
-
+        OlioTT = new Tilitapahtuma(this);
+        OlioTT->showFullScreen();
     }
     else if (button->objectName()=="btOption5"){
 
@@ -127,6 +128,43 @@ void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;
     qDebug()<<"Token Mainmenu luokassa: "<<token;
+}
+void Mainmenu::on_btOption4_clicked()  // nappi jolla siirrytään Tilitapahtuma ikkunaan
+{
+    QString site_url="http://localhost:3000/Tilitapahtuma";
+    QNetworkRequest request((QUrl(site_url)));
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
+    getManager = new QNetworkAccessManager(this);
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getTT(QNetworkReply*)));
+    reply = getManager->get(request);
+    // QSqlQuery query;
+    qDebug() << "Tilitapahtumat nappia on painettu";
+
+}
+void Mainmenu::getTT(QNetworkReply *reply)
+{
+    response_data = reply->readAll();
+    qDebug() << "response data on nyt:" + response_data;
+
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonArray json_array = json_doc.array();
+    QStringList tilitapahtumaData;
+    int maxRows = qMin(5, json_array.size() - currentIndex);
+    for (int i = 0; i < maxRows; ++i) {
+        QJsonObject json_obj = json_array.at(currentIndex + i).toObject();
+        QString rowData = QString::number(json_obj["Saldomuutos"].toInt()) + "     " +
+                          QString::number(json_obj["Aikaleima"].toInt()) + "     " +
+                          json_obj["Muutoslaji"].toString() + "     " +
+                          QString::number(json_obj["idTili"].toInt()) + "     " +
+                          json_obj["Paikkatieto"].toString();
+        tilitapahtumaData.append(rowData);
+    }
+    tilitapahtumalista = new Tilitapahtuma(this);
+    tilitapahtumalista->setTilitapahtumaData(tilitapahtumaData);
+    tilitapahtumalista->showFullScreen();
+    currentIndex += maxRows;
 }
 
 void Mainmenu::setKieli(const int &newKieli)

@@ -9,6 +9,7 @@ var KorttiRouter = require('./routes/Kortti');
 var loginRouter = require('./routes/login');
 var AsiakasRouter = require('./routes/Asiakas');
 var TiliRouter = require('./routes/Tili');
+var TilitapahtumaRouter = require('./routes/Tilitapahtuma');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja 
 app.use('/Kortti', KorttiRouter);
 app.use('/Asiakas', AsiakasRouter);
 app.use('/Tili', TiliRouter);
+app.use('/Tilitapahtuma', TiliRouter);
 
 
 function authenticateToken(req, res, next) {
