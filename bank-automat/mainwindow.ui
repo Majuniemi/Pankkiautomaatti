@@ -200,10 +200,10 @@
    <widget class="QWidget" name="centralwidget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>1140</x>
-      <y>650</y>
-      <width>2560</width>
-      <height>1440</height>
+      <x>1149</x>
+      <y>629</y>
+      <width>2551</width>
+      <height>1461</height>
      </rect>
     </property>
     <property name="palette">
@@ -290,7 +290,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>1</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8583.jpg</normaloff>:/Napit/IMG_8583.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum2">
@@ -340,7 +350,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>2</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8584.jpg</normaloff>:/Napit/IMG_8584.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum3">
@@ -390,7 +410,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>3</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8585.jpg</normaloff>:/Napit/IMG_8585.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum4">
@@ -440,7 +470,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>4</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8586.jpg</normaloff>:/Napit/IMG_8586.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum5">
@@ -490,7 +530,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>5</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8587.jpg</normaloff>:/Napit/IMG_8587.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum6">
@@ -540,7 +590,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>6</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8588.jpg</normaloff>:/Napit/IMG_8588.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum7">
@@ -590,7 +650,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>7</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8589.jpg</normaloff>:/Napit/IMG_8589.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum8">
@@ -640,7 +710,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>8</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8590.jpg</normaloff>:/Napit/IMG_8590.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum9">
@@ -690,7 +770,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>9</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8591.jpg</normaloff>:/Napit/IMG_8591.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btBLDBT">
@@ -740,7 +830,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>*</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btNum0">
@@ -790,7 +890,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>0</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8597.jpg</normaloff>:/Napit/IMG_8597.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btBRDBT">
@@ -840,7 +950,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>+</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btStop">
@@ -890,7 +1010,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8615.jpg</normaloff>:/Napit/IMG_8615.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btCancel">
@@ -940,7 +1070,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&lt;-</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8619.JPG</normaloff>:/Napit/IMG_8619.JPG</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btDBT">
@@ -992,6 +1132,16 @@
      <property name="text">
       <string/>
      </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
+     </property>
     </widget>
     <widget class="QPushButton" name="btAccept">
      <property name="geometry">
@@ -1040,7 +1190,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>O</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8616.jpg</normaloff>:/Napit/IMG_8616.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>120</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
     <widget class="QFrame" name="frame">
@@ -1307,7 +1467,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption3">
@@ -1357,7 +1527,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption1">
@@ -1407,7 +1587,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption2">
@@ -1457,7 +1647,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption8">
@@ -1507,7 +1707,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&lt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption7">
@@ -1557,7 +1767,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&lt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption5">
@@ -1607,7 +1827,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&lt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="btOption6">
@@ -1657,7 +1887,17 @@
       </palette>
      </property>
      <property name="text">
-      <string>&lt;</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>42</width>
+       <height>42</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -1682,6 +1922,7 @@
  <resources>
   <include location="Liput.qrc"/>
   <include location="Tausta.qrc"/>
+  <include location="Napit/Napit.qrc"/>
  </resources>
  <connections/>
 </ui>
