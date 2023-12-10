@@ -4,6 +4,8 @@
 #include "login.h"
 #include <QMainWindow>
 #include <QSerialPort>
+#include <QSerialPortInfo>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,12 +28,14 @@ public slots:
     void onbtOption8clicked();
     void translateTo(const QString &lang);
    void updateFlagVisibility(bool visible); */
+void handleLogout();
 
 private:
     Ui::MainWindow *ui;
     Login *olioLogin;
     QSerialPort *serialPort;
     int kieli =1;
+    bool kirjautunut = false;
 };
 
 #endif // MAINWINDOW_H

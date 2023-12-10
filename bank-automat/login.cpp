@@ -84,6 +84,7 @@ void Login::cancelClickHandler()
 
 void Login::stopClickHandler()
 {
+    emit logoutRequested();
     accept();                                                                       //Sulkee X näppäintä painettaessa Login-ikkunan
 }
 
@@ -136,6 +137,7 @@ void Login::loginSlot(QNetworkReply *reply)
                 getcountManager = new QNetworkAccessManager(this);
                 connect(getcountManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getKorttiSlot(QNetworkReply*)));   //Signal-Slot, joka vie operaation valmistuttua getKorttiSlotiin
                 replyKortti = getcountManager->get(request);                        //Lähetetään Get-pyyntö palvelimelle ja tallennetaan vastaus replyKortti jäsenmuuttujaan
+                ui->lineEditPassword->clear();
             }
             else{
                 qDebug()<<"Korttinumero tai PIN-koodi väärin";
@@ -217,6 +219,8 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu = new Mainmenu(this);
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
+        olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
+        connect(olioMainmenu, &Mainmenu::logoutRequested, this, &Login::handleLogout);
         olioMainmenu->setKieli(kieli);
         olioMainmenu->showFullScreen();                                                       //Avataan Mainmenu-olion ikkuna
         accept();                                                                   //Suljetaan Login-olion ikkuna
@@ -228,8 +232,14 @@ void Login::getTiliSlot(QNetworkReply *reply)
     reply->deleteLater();                                                           //Poistetaan oliot ja pidetään huolta muistinhallinnasta
     getoneManager->deleteLater();
 }
+
+void Login::handleLogout()
+{
+    emit logoutRequested();
+    //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
+}
 void Login::setKieli(const int &newKieli)
 {
     kieli = newKieli;
-    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
+    qDebug()<<"Kieli Login luokassa: "<<kieli;
 }

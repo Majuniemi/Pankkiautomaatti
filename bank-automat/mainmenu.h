@@ -26,6 +26,9 @@ public slots:
     void numberClickHandler();
     void commandClickHandler();
 
+signals:
+    void logoutRequested();
+
 private:
     Ui::Mainmenu *ui;
     Withdraw *olioWithdraw;
