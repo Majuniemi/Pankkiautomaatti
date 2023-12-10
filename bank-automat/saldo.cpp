@@ -1,10 +1,8 @@
 #include "saldo.h"
 #include "ui_saldo.h"
-<<<<<<< HEAD
 Saldo::Saldo(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Saldo)
-=======
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -16,7 +14,6 @@ Saldo::Saldo(QWidget *parent)
 Saldo::Saldo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Saldo)
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
 {
     ui->setupUi(this);
     ui->labelOption1->setText(" ");
@@ -26,7 +23,6 @@ Saldo::Saldo(QWidget *parent) :
     ui->labelOption5->setText(" ");
     ui->labelOption6->setText(" ");
     ui->labelOption7->setText(" ");
-<<<<<<< HEAD
     ui->labelOption8->setText("Takaisin");
     ui->labelPrompt->setText("Saldo");
     ui->labelInput->setText(" ");
@@ -40,11 +36,9 @@ Saldo::Saldo(QWidget *parent) :
     connect(ui->btNum8,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum9,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-=======
     ui->labelOption8->setText("");
 
 
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
     connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption2,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
@@ -57,15 +51,11 @@ Saldo::Saldo(QWidget *parent) :
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
 Saldo::~Saldo()
 {
     delete ui;
 }
-<<<<<<< HEAD
 /*
 void Saldo::showSaldo(QString value)
 {
@@ -158,7 +148,6 @@ void Saldo::commandClickHandler()
     else if (button->objectName()=="btOption8"){
         QWidget *OlioTakaisin = new Mainmenu(this);
         OlioTakaisin->showFullScreen();
-=======
 
 void Saldo::commandClickHandler()
 {
@@ -187,16 +176,13 @@ void Saldo::commandClickHandler()
     }
     else if (button->objectName()=="btOption8"){
 
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
     }
     else if (button->objectName()=="btStop"){
         accept();
     }
     else if (button->objectName()=="btCancel"){
-<<<<<<< HEAD
     }
     else if (button->objectName()=="btAccept"){
-=======
 
     }
     else if (button->objectName()=="btAccept"){
@@ -307,7 +293,6 @@ void Saldo::setKieli(const int &newKieli)
     }else{
         ui->labelPrompt->setText("The account balance is");
          qDebug()<<"Kieli ui:ssa saldo luokassa: "<<kieli;
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
     }
 
 

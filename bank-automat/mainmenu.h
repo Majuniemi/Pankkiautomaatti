@@ -48,7 +48,6 @@ private:
     QString saldo;
     QString valuutta;
     QByteArray token;
-<<<<<<< HEAD
     Tilitapahtuma *OlioTT; //tilitapahtumaolio
     //  Saldo *OlioSaldo; // saldoolio
     QNetworkAccessManager *getManager;
@@ -58,12 +57,7 @@ private:
      Tilitapahtuma *tilitapahtumalista; //tilitaphtuman käsittelyyn
     // Saldo *objectSaldo; //saldon käsittelyyn
     int TTmaara; //Tilitapahtumamäärä (CAP5)
-=======
-    QNetworkAccessManager *getManager;
-    QNetworkReply *reply;
-    QByteArray response_data;
     int kieli;
->>>>>>> 993d7f0bcf4b48ca59e5c850c957238396dca991
 };
 
 #endif // MAINMENU_H
