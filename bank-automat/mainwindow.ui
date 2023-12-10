@@ -293,8 +293,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8583.jpg</normaloff>Napit/IMG_8583.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8583.jpg</normaloff>:/Napit/IMG_8583.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -353,8 +353,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8584.jpg</normaloff>Napit/IMG_8584.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8584.jpg</normaloff>:/Napit/IMG_8584.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -413,8 +413,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8585.jpg</normaloff>Napit/IMG_8585.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8585.jpg</normaloff>:/Napit/IMG_8585.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -473,8 +473,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8586.jpg</normaloff>Napit/IMG_8586.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8586.jpg</normaloff>:/Napit/IMG_8586.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -533,8 +533,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8587.jpg</normaloff>Napit/IMG_8587.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8587.jpg</normaloff>:/Napit/IMG_8587.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -593,8 +593,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8588.jpg</normaloff>Napit/IMG_8588.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8588.jpg</normaloff>:/Napit/IMG_8588.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -653,8 +653,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8589.jpg</normaloff>Napit/IMG_8589.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8589.jpg</normaloff>:/Napit/IMG_8589.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -713,8 +713,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8590.jpg</normaloff>Napit/IMG_8590.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8590.jpg</normaloff>:/Napit/IMG_8590.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -773,8 +773,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8591.jpg</normaloff>Napit/IMG_8591.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8591.jpg</normaloff>:/Napit/IMG_8591.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -833,8 +833,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -893,8 +893,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8597.jpg</normaloff>Napit/IMG_8597.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8597.jpg</normaloff>:/Napit/IMG_8597.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -953,8 +953,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1013,8 +1013,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8615.jpg</normaloff>Napit/IMG_8615.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8615.jpg</normaloff>:/Napit/IMG_8615.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1073,8 +1073,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8619.JPG</normaloff>Napit/IMG_8619.JPG</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8619.JPG</normaloff>:/Napit/IMG_8619.JPG</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1133,8 +1133,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</normaloff>:/Napit/233DC32A-8FD4-4C5C-BC60-110DCD022AA2.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1193,8 +1193,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/IMG_8616.jpg</normaloff>Napit/IMG_8616.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/IMG_8616.jpg</normaloff>:/Napit/IMG_8616.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1470,8 +1470,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1530,8 +1530,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1590,8 +1590,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1650,8 +1650,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</normaloff>:/Napit/5ABF8A40-1C7D-4BE3-9B14-EA9CBDDAF52E.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1710,8 +1710,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1770,8 +1770,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1830,8 +1830,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1890,8 +1890,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
+      <iconset resource="Napit/Napit.qrc">
+       <normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</normaloff>:/Napit/802713C5-D109-4182-83B7-935E8F95A7BC.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1922,6 +1922,7 @@
  <resources>
   <include location="Liput.qrc"/>
   <include location="Tausta.qrc"/>
+  <include location="Napit/Napit.qrc"/>
  </resources>
  <connections/>
 </ui>
