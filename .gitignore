@@ -4,3 +4,4 @@ bank-automat/*.user
 .DS_Store
 backend/.env
 .vscode/
+build-bank-*
