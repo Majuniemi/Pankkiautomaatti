@@ -16,6 +16,7 @@ SOURCES += \
     mainmenu.cpp \
     mainwindow.cpp \
     saldo.cpp \
+    tilitapahtuma.cpp \
     transfer.cpp \
     withdraw.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
     mainmenu.h \
     mainwindow.h \
     saldo.h \
+    tilitapahtuma.h \
     transfer.h \
     withdraw.h
 
@@ -32,6 +34,7 @@ FORMS += \
     mainmenu.ui \
     mainwindow.ui \
     saldo.ui \
+    tilitapahtuma.ui \
     transfer.ui \
     withdraw.ui
 
