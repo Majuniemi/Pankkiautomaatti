@@ -15,15 +15,6 @@ Saldo::Saldo(QWidget *parent)
     ui->labelOption8->setText("Takaisin");
     ui->labelPrompt->setText("Saldo");
     ui->labelInput->setText(" ");
-   /* QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "my_mysql_connection");
-    db.setHostName("127.0.0.1");
-    db.setPort(3306);
-    db.setDatabaseName("BankSimul_R9");
-    db.setUserName("r9user");
-    db.setPassword("r9pass");
-    if (!db.open()) {
-    qDebug() << "SALDO Tietokantayhteyden avaaminen epäonnistui:" << db.lastError().text();
-    }*/  // ripulia? aluksi ollu käytössä
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum3,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -50,6 +41,7 @@ Saldo::~Saldo()
 {
     delete ui;
 }
+/*
 void Saldo::showSaldo(QString value)
 {
     ui->labelInput->setText(value);
@@ -66,7 +58,48 @@ void Saldo::numberClickHandler()
     QLabel *currentEdit = ui->labelInput;
     currentEdit->setText(currentEdit->text() + button->text());
     }
-} /*
+}
+
+void Saldo::setSaldo(const QString &newSaldo)
+{
+    saldo = newSaldo;
+
+}
+
+void Saldo::showSaldo()
+{
+    ui->labelInput->setText(saldo);
+}
+void Saldo::setToken(const QByteArray &newToken)
+{
+    token = newToken;
+    qDebug()<<"Token Mainmenu luokassa: "<<&token;
+}
+void Saldo::onSaldoButtonClicked(QString tilinumero)
+{
+    QString site_url="http://localhost:3000/Tili/getSaldo/"+tilinumero;
+    QNetworkRequest request((site_url));
+    //WEBTOKEN ALKU
+    request.setRawHeader(QByteArray("Authorization"),(token));
+    //WEBTOKEN LOPPU
+    getManager = new QNetworkAccessManager(this);
+
+    connect(getManager, SIGNAL(finished (QNetworkReply)), this, SLOT(getSaldoSlot(QNetworkReply)));
+
+    reply = getManager->get(request);
+}
+
+void Saldo::getSaldoSlot(QNetworkReply *reply)
+{
+    response_data=reply->readAll();
+    qDebug()<<"DATA : "+response_data;
+    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+    QJsonObject json_obj = json_doc.object();
+    QString Saldo =json_obj["saldo"].toString();
+    ui->labelInput->setText(Saldo);
+    reply->deleteLater();
+    getManager->deleteLater();
+}
 void Saldo::naytaSaldo()
 {
     QSqlQuery query(db);
@@ -79,6 +112,7 @@ void Saldo::naytaSaldo()
     qDebug() << "SALDO Tietokantakysely epäonnistui: " << query.lastError().text();
     }
 }*/  // ripulia?
+
 void Saldo::commandClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
@@ -107,4 +141,7 @@ void Saldo::commandClickHandler()
     }
     else if (button->objectName()=="btAccept"){
     }
+
+
 }
+

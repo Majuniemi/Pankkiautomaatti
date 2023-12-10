@@ -2,6 +2,7 @@
 #define MAINMENU_H
 
 #include <QDialog>
+#include "qtablewidget.h"
 #include "tilitapahtuma.h"
 #include <QtNetwork>
 #include <QNetworkAccessManager>
@@ -30,8 +31,9 @@ public slots:
     void commandClickHandler();
 
 private slots:
-    void on_btOption4_clicked(); //Tilitapahtuma
-    void getTT(QNetworkReply *reply); //GetTilitapahtuma
+   void on_btOption4_clicked(); //Tilitapahtuma
+   void getTT(QNetworkReply *reply); //GetTilitapahtuma
+
 
 private:
     Ui::Mainmenu *ui;
@@ -44,9 +46,11 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
     QNetworkAccessManager *postManager;
-    Tilitapahtuma *tilitapahtumalista; //tilitaphtuman käsittelyyn
+     Tilitapahtuma *tilitapahtumalista; //tilitaphtuman käsittelyyn
     // Saldo *objectSaldo; //saldon käsittelyyn
     int TTmaara; //Tilitapahtumamäärä (CAP5)
+    QTableWidget *tilitapahtuma;
+     int currentIndex;
 };
 
 #endif // MAINMENU_H

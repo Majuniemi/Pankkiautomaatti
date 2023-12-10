@@ -6,6 +6,7 @@ Mainmenu::Mainmenu(QWidget *parent)
     , ui(new Ui::Mainmenu)
 {
     ui->setupUi(this);
+
     ui->labelOption1->setText("Nosta rahaa");
     ui->labelOption2->setText("Tilisiirto");
     ui->labelOption3->setText("Saldo");
@@ -70,7 +71,8 @@ void Mainmenu::commandClickHandler()
 
     }
     else if (button->objectName()=="btOption4"){
-
+        OlioTT = new Tilitapahtuma(this);
+        OlioTT->showFullScreen();
     }
     else if (button->objectName()=="btOption5"){
 
@@ -102,7 +104,7 @@ void Mainmenu::setUsername(const QString &newUsername)
 }
 void Mainmenu::on_btOption4_clicked()  // nappi jolla siirrytään Tilitapahtuma ikkunaan
 {
-    QString site_url="http://localhost:3000/Tilitapahtuma";
+           QString site_url="http://localhost:3000/Tilitapahtuma";
     QNetworkRequest request((QUrl(site_url)));
     //WEBTOKEN ALKU
     request.setRawHeader(QByteArray("Authorization"),(token));
@@ -114,46 +116,36 @@ void Mainmenu::on_btOption4_clicked()  // nappi jolla siirrytään Tilitapahtuma
     qDebug() << "Tilitapahtumat nappia on painettu";
 
 }
-    void Mainmenu::getTT(QNetworkReply *reply)  //printataan tilitapahtumiin tietokannasta halutut tiedot
-    {
-        /*  response_data=reply->readAll();
-    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-    QJsonArray json_array = json_doc.array();
-    QString Tilitapahtumat;
-    int TTmaara = 0;
-    for (const QJsonValue &value : json_array) {
-    if (TTmaara >=5) {
-    break;
-    }
-    QJsonObject json_obj = value.toObject();
-    Tilitapahtumat += QString::number(json_obj["Saldomuutos"].toInt()) + "   " +
-    QString::number(json_obj["Aikaleima"].toInt()) + "   " +
-    json_obj["Muutoslaji"].toString() + "   " +
-    QString::number(json_obj["idTili"].toInt()) + "   " +
-    json_obj["Paikkatieto"].toString() + "\r";
-    TTmaara++; */ // Saadaan 5tilitapahtumaa kerralla mutta nappi sakkas ja moti
-        response_data=reply->readAll();
-        qDebug() << "response data on nyt:" + response_data;
-        QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-        QJsonArray json_array = json_doc.array();
-        QString Tilitapahtumat;
-        for (const QJsonValue &value : json_array) {
-            QJsonObject json_obj = value.toObject();
-            Tilitapahtumat += QString::number(json_obj["Saldomuutos"].toInt()) + "   " +
-                              QString::number(json_obj["Aikaleima"].toInt()) + "   " +
-                              json_obj["Muutoslaji"].toString() + "   " +
-                              QString::number(json_obj["idTili"].toInt()) + "   " +
-                              json_obj["Paikkatieto"].toString() + "\r";
-            qDebug() << Tilitapahtumat;
-        }
+void Mainmenu::getTT(QNetworkReply *reply)
+{
+   response_data = reply->readAll();
+   qDebug() << "response data on nyt:" + response_data;
 
-        tilitapahtumalista =new Tilitapahtuma(this);
-        tilitapahtumalista->showTilitapahtuma(Tilitapahtumat);
-        tilitapahtumalista->showFullScreen();
-        //  ui->labelInput->setText(Tilitapahtumat);
-        reply->deleteLater();
-        getManager->deleteLater();
-    }
+   QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+   QJsonArray json_array = json_doc.array();
+       QStringList tilitapahtumaData;
+       int maxRows = qMin(5, json_array.size() - currentIndex);
+       for (int i = 0; i < maxRows; ++i) {
+           QJsonObject json_obj = json_array.at(currentIndex + i).toObject();
+           QString rowData = QString::number(json_obj["Saldomuutos"].toInt()) + "     " +
+                             QString::number(json_obj["Aikaleima"].toInt()) + "     " +
+                             json_obj["Muutoslaji"].toString() + "     " +
+                             QString::number(json_obj["idTili"].toInt()) + "     " +
+                             json_obj["Paikkatieto"].toString();
+           tilitapahtumaData.append(rowData);
+       }
+       tilitapahtumalista = new Tilitapahtuma(this);
+       tilitapahtumalista->setTilitapahtumaData(tilitapahtumaData);
+       tilitapahtumalista->showFullScreen();
+       currentIndex += maxRows;
+   }
+   //}
+
+  //tilitapahtumalista = new Tilitapahtuma(this);
+ //  tilitapahtumalista->setTilitapahtumaData(tilitapahtumaData);
+  // tilitapahtumalista->showFullScreen();
+//}
+
 void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;

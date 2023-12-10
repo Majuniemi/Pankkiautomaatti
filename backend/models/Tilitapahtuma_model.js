@@ -2,7 +2,7 @@ const db = require('../database');
 
 const Tilitapahtumat = {
   getAll: function(callback) {
-    return db.query('select DATE_FORMAT(Aikaleima,"%D.%M.%Y") as "Aikaleima", Saldomuutos, Muutoslaji, idTili, Paikkatieto from Tilitapahtumat', callback);
+    return db.query('select * from Tilitapahtumat', callback);
   },
   getById: function(id, callback) {
     return db.query('select * from Tilitapahtumat where idTilitapahtumat=?', [id], callback);

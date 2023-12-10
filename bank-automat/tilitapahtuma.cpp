@@ -1,32 +1,28 @@
 #include "tilitapahtuma.h"
 #include "ui_tilitapahtuma.h"
 #include "mainmenu.h"
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
 
 Tilitapahtuma::Tilitapahtuma(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Tilitapahtuma)
+    QDialog(parent),ui(new Ui::Tilitapahtuma), requestedDataCount(5)
 {
     ui->setupUi(this);
+    ui->tableWidget->setRowCount(5);
+    ui->tableWidget->setColumnCount(5);
     ui->labelOption1->setText(" ");
     ui->labelOption2->setText("Taaksepäin");
-    ui->labelOption3->setText(" ");
+        ui->labelOption3->setText(" ");
     ui->labelOption4->setText(" ");
     ui->labelOption5->setText(" ");
     ui->labelOption6->setText("Eteenpäin");
-    ui->labelOption7->setText(" ");
-    ui->labelOption8->setText("Takaisin");
-    ui->labelPrompt->setText("Tilitapahtumat");
+        ui->labelOption7->setText("Takaisin");
+    ui->labelOption8->setText(" ");
+    ui->labelPrompt->setText(" ");
     ui->labelInput->setText(" ");
-   /* QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "my_mysql_connection");
-    db.setHostName("127.0.0.1");
-    db.setPort(3306);
-    db.setDatabaseName("BankSimul_R9");
-    db.setUserName("r9user");
-    db.setPassword("r9pass");
-    if (!db.open()) {
-    qDebug() << "TILITAPAHTUMA Tietokantayhteyden avaaminen epäonnistui:" << db.lastError().text();
-    }   // ripulia? aluksi ollu käytössä
-    */
+
+
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum3,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -38,11 +34,11 @@ Tilitapahtuma::Tilitapahtuma(QWidget *parent) :
     connect(ui->btNum9,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption2,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
+    connect(ui->btOption2, SIGNAL(clicked(bool)), this, SLOT(commandClickHandler()));
     connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption4,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption5,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption6,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
+    connect(ui->btOption6, SIGNAL(clicked(bool)), this, SLOT(commandClickHandler()));
     connect(ui->btOption7,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption8,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
@@ -60,29 +56,9 @@ void Tilitapahtuma::setTilitapahtumaa(const QString &newTilitapahtumaa)
 }
 void Tilitapahtuma::showTilitapahtuma(QString value)
 {
-ui->labelInput->setText(value);
+    ui->labelInput->setText(value);
 }
-/*
-void Tilitapahtuma::haeTilitapahtumat(int offset) {
-    QSqlQuery query(db);
-    query.prepare("SELECT Aikaleima, Saldomuutos, idTili, Muutoslaji, Paikkatieto FROM `banksimul_r9`.`tilitapahtumat`; LIMIT 5 OFFSET :offset");
-    query.bindValue(":offset", offset);
-    if (!query.exec()) {
-    qDebug() << "TILITAPAHTUMA HAETILITAPAHTUMAT Tietokantakysely epäonnistui:" << query.lastError().text();
-    return;
-    }
-    ui->labelPrompt->clear();
-    ui->labelInput->clear();
-    while (query.next()) {
-    QString Aikaleima = query.value("Aikaleima").toString();
-    QString Tilinumero = query.value("Tilinumero").toString();
-    QString Paikkatieto = query.value("Paikkatieto").toString();
-    QString Saldomuutos = query.value("Saldomuutos").toString();
-    qDebug() << "Aikaleima: " << Aikaleima << ", Tilinumero: " << Tilinumero << ", Paikkatieto: " << Paikkatieto << ", Saldomuutos" << Saldomuutos;
-    ui->labelPrompt->setText("Aika     ""Tilinumero     ""Paikka     ""Saldomuutos");
-    ui->labelInput->setText(Aikaleima + "     " + Tilinumero + "     " + Paikkatieto + "     " + Saldomuutos);
-    } // Ripulia? käytetty testivaiheessa
-}*/
+
 void Tilitapahtuma::numberClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
@@ -103,18 +79,20 @@ void Tilitapahtuma::commandClickHandler()
     else if (button->objectName()=="btOption3"){
     }
     else if (button->objectName()=="btOption4"){
+
     }
     else if (button->objectName()=="btOption5"){
     }
     else if (button->objectName()=="btOption6"){
         OlioEP = new Tilitapahtuma(this);  // nappi jolla saadaan seuraavat 5tilitapahtumaa
         OlioEP->showFullScreen();
+
     }
     else if (button->objectName()=="btOption7"){
-    }
-    else if (button->objectName()=="btOption8"){
         QWidget *OlioTakaisin = new Mainmenu(this);  // siirrytään takasin mainmenuun
         OlioTakaisin->showFullScreen();
+    }
+    else if (button->objectName()=="btOption8"){
     }
     else if (button->objectName()=="btStop"){
         accept();
@@ -124,37 +102,129 @@ void Tilitapahtuma::commandClickHandler()
     else if (button->objectName()=="btAccept"){
     }
 }
-int nykysettilitapahtumat = 0;
-void Tilitapahtuma::paivitatilitapahtuma() {
- /*   QSqlQuery query;
-    if  (query.exec(QString("SELECT Aikaleima, Saldomuutos, idTili, Muutoslaji, Paikkatieto FROM `banksimul_r9`.`tilitapahtumat` WHERE Tilinumero = '%1' LIMIT 5 OFFSET %2").arg(nykysettilitapahtumat))){
-    while (query.next()) {
-    QString aikaleima = query.value(0).toString();
-    int saldomuutos = query.value(2).toInt();
-    int idTili = query.value(3).toInt();
-    QString muutoslaji = query.value(4).toString();
-    QString paikkatieto = query.value(5).toString();
-    qDebug() << aikaleima << saldomuutos << idTili << muutoslaji << paikkatieto;
-    }
+void Tilitapahtuma::paivitatilitapahtuma()
+{
+
+}
+
+void Tilitapahtuma::on_btOption2_clicked() {
+    qDebug() << "eteenpain nappia on painettu";
+     int requestedDataCount = 5;
+    updateTransactions(true, requestedDataCount);
+}
+
+void Tilitapahtuma::on_btOption6_clicked() {
+    qDebug() << "Taaksepain nappi painettu";
+     int requestedDataCount = 5;
+    updateTransactions(false, requestedDataCount);
+}
+void Tilitapahtuma::updateTransactions(bool forward, int requestedDataCount) {
+    QString site_url = "http://localhost:3000/Tilitapahtuma";
+    QNetworkRequest request((QUrl(site_url)));
+    request.setRawHeader(QByteArray("Authorization"), token);
+
+    getManager = new QNetworkAccessManager(this);
+
+    if (forward) {
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getEP(QNetworkReply*)));
     } else {
-    qDebug() << "TILITAPAHTUMA Tilitapahtuma::paivitatilitapahtuma " << query.lastError().text();
+        connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getTP(QNetworkReply*)));
     }
-}  // tulostetaan ruudulle tietokannasta tietoja 5kappaletta.
-void Tilitapahtuma::on_btOption2_clicked()
-{
-    nykysettilitapahtumat -= 5;
-    if (nykysettilitapahtumat < 0) {
-    nykysettilitapahtumat = 0;
-    QSqlQuery query;
-    qDebug() << "miinustus epäonnistu" << query.lastError().text();
+
+    reply = getManager->get(request);
+}
+void Tilitapahtuma::getEP(QNetworkReply *reply) {
+    response_data = reply->readAll();
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(response_data);
+    if (jsonDoc.isNull()) {
+        qDebug() << "Virheellinen JSON-data.";
+        return;
     }
-    paivitatilitapahtuma();
-} // taaksepäin buttonille koodi
-void Tilitapahtuma::on_btOption6_clicked()
-{
-    nykysettilitapahtumat += 5;
-    QSqlQuery query;
-    qDebug() << "Lisäys epäonnistui" << query.lastError().text();
-    paivitatilitapahtuma();
-} // etenpäin buttonille koodi*/
+    if (!jsonDoc.isArray()) {
+        qDebug() << "JSON ei ole taulukko.";
+        return;
+    }
+    QJsonArray jsonArray = jsonDoc.array();
+
+    if (currentIndex + requestedDataCount <= jsonArray.size()) {
+        QStringList visibleTransactions;
+        for (int i = currentIndex; i < currentIndex + requestedDataCount; ++i) {
+            QJsonObject transactionObject = jsonArray.at(i).toObject();
+
+            QString transactionInfo = QString("Aika: %1, Saldomuutos: %2, Muutoslaji: %3, Tili no.: %4, Paikka: %5")
+                                            .arg(transactionObject.value("Aikaleima").toString())
+                                          .arg(transactionObject.value("Saldomuutos").toString())
+                                          .arg(transactionObject.value("Muutoslaji").toString())
+                                          .arg(transactionObject.value("idTili").toString())
+                                          .arg(transactionObject.value("Paikkatieto").toString());
+
+            visibleTransactions.append(transactionInfo);
+        }
+        setTilitapahtumaData(visibleTransactions);
+        currentIndex += requestedDataCount;
+    } else {
+        qDebug() << "Ei tarpeeksi tietoja näytettäväksi.";
+    }
+}
+
+void Tilitapahtuma::getTP(QNetworkReply *reply) {
+    response_data = reply->readAll();
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(response_data);
+    if (jsonDoc.isNull()) {
+        qDebug() << "Virheellinen JSON-data.";
+        return;
+    }
+    if (!jsonDoc.isArray()) {
+        qDebug() << "JSON ei ole taulukko.";
+        return;
+    }
+    QJsonArray jsonArray = jsonDoc.array();
+
+    if (currentIndex - requestedDataCount >= 0) {
+        QStringList visibleTransactions;
+    for (int i = currentIndex; i < currentIndex - requestedDataCount; ++i) {
+            QJsonObject transactionObject = jsonArray.at(i).toObject();
+
+            QString transactionInfo = QString("Aika: %1, Saldomuutos: %2, Muutoslaji: %3, Tili no.: %4, Paikka: %5")
+                                          .arg(transactionObject.value("Aikaleima").toString())
+                                          .arg(transactionObject.value("Saldomuutos").toString())
+                                          .arg(transactionObject.value("Muutoslaji").toString())
+                                          .arg(transactionObject.value("idTili").toString())
+                                          .arg(transactionObject.value("Paikkatieto").toString());
+
+            visibleTransactions.append(transactionInfo);
+        }
+        setTilitapahtumaData(visibleTransactions);
+        currentIndex -= requestedDataCount;
+    } else {
+        qDebug() << "Ei tarpeeksi tietoja näytettäväksi taaksepäin.";
+    }
+}
+void Tilitapahtuma::setTilitapahtumaData(const QStringList &tilitapahtumaData) {
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(tilitapahtumaData.size());
+    ui->tableWidget->setColumnCount(5);
+
+    int currentIndex = 0;
+    for (const QString &currentIndexData : tilitapahtumaData) {
+        if (currentIndex >= 5) {
+            break;
+        }
+        ui->tableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("Aika"));
+        ui->tableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("Saldomuutos"));
+        ui->tableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("Tili no."));
+        ui->tableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("Tapahtuma"));
+        ui->tableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("Paikka"));
+        ui->tableWidget->setVerticalHeaderItem(0, new QTableWidgetItem(" "));
+        ui->tableWidget->setVerticalHeaderItem(1, new QTableWidgetItem(" "));
+        ui->tableWidget->setVerticalHeaderItem(2, new QTableWidgetItem(" "));
+        ui->tableWidget->setVerticalHeaderItem(3, new QTableWidgetItem(" "));
+        ui->tableWidget->setVerticalHeaderItem(4, new QTableWidgetItem(" "));
+
+        QStringList columns = currentIndexData.split("     ");
+        for (int col = 0; col < columns.size(); ++col) {
+            ui->tableWidget->setItem(currentIndex, col, new QTableWidgetItem(columns[col]));
+        }
+        ++currentIndex;
+    }
 }

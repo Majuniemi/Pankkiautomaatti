@@ -511,11 +511,29 @@ release/moc_login.cpp: ../bank-automat/login.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		release/moc_predefs.h \
 		D:/Qt/6.7.0/mingw_64/bin/moc.exe
 	D:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/group_9/group_9/build-bank-automat-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/group_9/group_9/bank-automat -ID:/Qt/6.7.0/mingw_64/include -ID:/Qt/6.7.0/mingw_64/include/QtWidgets -ID:/Qt/6.7.0/mingw_64/include/QtGui -ID:/Qt/6.7.0/mingw_64/include/QtNetwork -ID:/Qt/6.7.0/mingw_64/include/QtSerialPort -ID:/Qt/6.7.0/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\bank-automat\login.h -o release\moc_login.cpp
@@ -686,6 +704,25 @@ release/moc_mainmenu.cpp: ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
@@ -702,7 +739,6 @@ release/moc_mainmenu.cpp: ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
@@ -728,12 +764,10 @@ release/moc_mainmenu.cpp: ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
@@ -759,7 +793,6 @@ release/moc_mainmenu.cpp: ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
@@ -892,9 +925,12 @@ release/moc_mainmenu.cpp: ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		release/moc_predefs.h \
 		D:/Qt/6.7.0/mingw_64/bin/moc.exe
 	D:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/group_9/group_9/build-bank-automat-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/group_9/group_9/bank-automat -ID:/Qt/6.7.0/mingw_64/include -ID:/Qt/6.7.0/mingw_64/include/QtWidgets -ID:/Qt/6.7.0/mingw_64/include/QtGui -ID:/Qt/6.7.0/mingw_64/include/QtNetwork -ID:/Qt/6.7.0/mingw_64/include/QtSerialPort -ID:/Qt/6.7.0/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\bank-automat\mainmenu.h -o release\moc_mainmenu.cpp
@@ -1271,11 +1307,29 @@ release/moc_mainwindow.cpp: ../bank-automat/mainwindow.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/QSerialPort \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialport.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -1451,13 +1505,259 @@ release/moc_saldo.cpp: ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_saldo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/QAction \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmutex.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qresultstore.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qthreadpool.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qthread.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qrunnable.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qexception.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpromise.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenu \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
+		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		../bank-automat/tilitapahtuma.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetworkDepends \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QtCore \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QtCoreDepends \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/q20algorithm.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/q20chrono.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/q20iterator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/q20vector.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/q23functional.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractanimation.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qapplicationstatic.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QMutex \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qassociativeiterable.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qbasictimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qbitarray.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qbuffer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborstream.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborstreamreader.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborstreamwriter.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcollator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcommandlineoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcommandlineparser.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcryptographichash.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtimezone.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qdiriterator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qeasingcurve.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfactoryinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfileselector.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QStringList \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfilesystemwatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonobject.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringmatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlibrary.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlibraryinfo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qversionnumber.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlockfile.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qloggingcategory.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmessageauthenticationcode.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmetaobject.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmimedata.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmimedatabase.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmimetype.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qobjectcleanuphandler.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qoperatingsystemversion.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qparallelanimationgroup.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpauseanimation.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpermissions.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qplugin.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpluginloader.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qprocess.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qproperty.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpropertyprivate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpropertyanimation.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qvariantanimation.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qqueue.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qreadwritelock.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qresource.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsavefile.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qscopedvaluerollback.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsemaphore.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsequentialanimationgroup.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsequentialiterable.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsettings.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsharedmemory.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtipccommon.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsignalmapper.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsimd.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsocketnotifier.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsortfilterproxymodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qstack.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qstandardpaths.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qstaticlatin1stringmatcher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qstorageinfo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qstringlistmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qsystemsemaphore.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtcoreversion.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtemporarydir.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtemporaryfile.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtextboundaryfinder.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qthreadstorage.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtimeline.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtranslator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtransposeproxymodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtsymbolmacros.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qurlquery.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qvarianthash.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QHash \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QString \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qvariantlist.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qvariantmap.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qwaitcondition.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QDeadlineTimer \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qwineventnotifier.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qxmlstream.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qxpfunctional.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qabstractnetworkcache.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkrequest.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QSharedDataPointer \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QUrl \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhostaddress.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qauthenticator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qdnslookup.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qdtls.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslsocket.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslerror.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslcertificate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qssl.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QFlags \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhostinfo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhstspolicy.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhttp1configuration.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhttp2configuration.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qhttpmultipart.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QByteArray \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QIODevice \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkRequest \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qlocalserver.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qlocalsocket.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkaccessmanager.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslConfiguration \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslconfiguration.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QMetaType \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkcookie.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkcookiejar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkdatagram.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkdiskcache.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkinformation.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkproxy.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qnetworkreply.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QNetworkAccessManager \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qocspresponse.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qpassworddigestor.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QCryptographicHash \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslcertificateextension.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslcipher.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qssldiffiehellmanparameters.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslellipticcurve.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslkey.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qsslserver.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QTcpServer \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtcpserver.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslError \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QSslSocket \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
+		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		release/moc_predefs.h \
 		D:/Qt/6.7.0/mingw_64/bin/moc.exe
 	D:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/group_9/group_9/build-bank-automat-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/group_9/group_9/bank-automat -ID:/Qt/6.7.0/mingw_64/include -ID:/Qt/6.7.0/mingw_64/include/QtWidgets -ID:/Qt/6.7.0/mingw_64/include/QtGui -ID:/Qt/6.7.0/mingw_64/include/QtNetwork -ID:/Qt/6.7.0/mingw_64/include/QtSerialPort -ID:/Qt/6.7.0/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\bank-automat\saldo.h -o release\moc_saldo.cpp
 
 release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QDialog \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qtguiglobal.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qglobal.h \
@@ -1508,6 +1808,9 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qtguiexports.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qwidget.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qobjectdefs.h \
@@ -1621,6 +1924,22 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QDialog \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetworkDepends \
@@ -1636,7 +1955,6 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
@@ -1662,12 +1980,10 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
@@ -1693,7 +2009,6 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
@@ -1826,6 +2141,10 @@ release/moc_tilitapahtuma.cpp: ../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		release/moc_predefs.h \
 		D:/Qt/6.7.0/mingw_64/bin/moc.exe
 	D:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/group_9/group_9/build-bank-automat-Desktop_Qt_6_7_0_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -IC:/group_9/group_9/bank-automat -ID:/Qt/6.7.0/mingw_64/include -ID:/Qt/6.7.0/mingw_64/include/QtWidgets -ID:/Qt/6.7.0/mingw_64/include/QtGui -ID:/Qt/6.7.0/mingw_64/include/QtNetwork -ID:/Qt/6.7.0/mingw_64/include/QtSerialPort -ID:/Qt/6.7.0/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\bank-automat\tilitapahtuma.h -o release\moc_tilitapahtuma.cpp
@@ -2210,11 +2529,29 @@ ui_login.h: ../bank-automat/login.ui \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h
 	D:\Qt\6.7.0\mingw_64\bin\uic.exe ..\bank-automat\login.ui -o ui_login.h
 
 ui_mainmenu.h: ../bank-automat/mainmenu.ui \
@@ -2616,11 +2953,29 @@ release/login.o: ../bank-automat/login.cpp ../bank-automat/login.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		ui_login.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QAction \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
@@ -2629,7 +2984,6 @@ release/login.o: ../bank-automat/login.cpp ../bank-automat/login.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
@@ -2644,9 +2998,6 @@ release/login.o: ../bank-automat/login.cpp ../bank-automat/login.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget
@@ -3024,11 +3375,29 @@ release/main.o: ../bank-automat/main.cpp ../bank-automat/mainwindow.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/QSerialPort \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialport.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -3206,6 +3575,25 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
@@ -3222,7 +3610,6 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
@@ -3248,12 +3635,10 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
@@ -3279,7 +3664,6 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
@@ -3412,9 +3796,12 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		ui_mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QAction \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
@@ -3423,7 +3810,6 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
@@ -3432,9 +3818,6 @@ release/mainmenu.o: ../bank-automat/mainmenu.cpp ../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget
@@ -3812,11 +4195,29 @@ release/mainwindow.o: ../bank-automat/mainwindow.cpp ../bank-automat/mainwindow.
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/QSerialPort \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialport.h \
 		D:/Qt/6.7.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -3829,7 +4230,6 @@ release/mainwindow.o: ../bank-automat/mainwindow.cpp ../bank-automat/mainwindow.
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
@@ -3838,9 +4238,6 @@ release/mainwindow.o: ../bank-automat/mainwindow.cpp ../bank-automat/mainwindow.
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget
@@ -4013,7 +4410,64 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_saldo.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/QAction \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qmutex.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qresultstore.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qthreadpool.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qthread.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qrunnable.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qexception.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qpromise.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenu \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
 		../bank-automat/mainmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../bank-automat/tilitapahtuma.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
@@ -4027,28 +4481,11 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/q23functional.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractanimation.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstracteventdispatcher.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qapplicationstatic.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QMutex \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qmutex.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qtsan_impl.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qfutureinterface.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qresultstore.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuture_impl.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qthreadpool.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qthread.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qrunnable.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qexception.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qpromise.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qassociativeiterable.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbasictimer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbitarray.h \
@@ -4056,12 +4493,10 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
@@ -4087,7 +4522,6 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
@@ -4150,7 +4584,6 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qurlquery.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qvarianthash.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QHash \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QString \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qvariantlist.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qvariantmap.h \
@@ -4220,14 +4653,14 @@ release/saldo.o: ../bank-automat/saldo.cpp ../bank-automat/saldo.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\saldo.o ..\bank-automat\saldo.cpp
 
 release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilitapahtuma.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QDialog \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtableview.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qtguiglobal.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qglobal.h \
@@ -4278,6 +4711,9 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qtguiexports.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qwidget.h \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qobjectdefs.h \
@@ -4391,6 +4827,22 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QDialog \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetwork \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/QtNetworkDepends \
@@ -4406,7 +4858,6 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qabstractproxymodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qanimationgroup.h \
@@ -4432,12 +4883,10 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qbytearraymatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcache.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/quuid.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qcbormap.h \
@@ -4463,7 +4912,6 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qfuturewatcher.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qidentityproxymodel.h \
-		D:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonarray.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsonvalue.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/qjsondocument.h \
@@ -4596,11 +5044,34 @@ release/tilitapahtuma.o: ../bank-automat/tilitapahtuma.cpp ../bank-automat/tilit
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qtnetworkversion.h \
 		D:/Qt/6.7.0/mingw_64/include/QtNetwork/qudpsocket.h \
 		D:/Qt/6.7.0/mingw_64/include/QtCore/QJsonDocument \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		ui_tilitapahtuma.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/QAction \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QHeaderView \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qheaderview.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenu \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
 		../bank-automat/mainmenu.h \
 		D:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h
+		D:/Qt/6.7.0/mingw_64/include/QtWidgets/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tilitapahtuma.o ..\bank-automat\tilitapahtuma.cpp
 
 release/qrc_Tausta.o: release/qrc_Tausta.cpp 
