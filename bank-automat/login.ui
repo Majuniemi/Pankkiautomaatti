@@ -1110,7 +1110,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>PIN-koodi:</string>
+      <string>PIN:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1677,14 +1677,6 @@
   <zorder>menubar</zorder>
   <zorder>statusbar</zorder>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>Login</class>
-   <extends>QWidget</extends>
-   <header>login.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="Tausta.qrc"/>
  </resources>
