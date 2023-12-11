@@ -7,28 +7,6 @@ Mainmenu::Mainmenu(QWidget *parent)
     , ui(new Ui::Mainmenu)
 {
     ui->setupUi(this);
-    /*
-    ui->labelOption1->setText("Nosta rahaa");
-    ui->labelOption2->setText("Tilisiirto");
-    ui->labelOption3->setText("Saldo");
-    ui->labelOption4->setText("Tilitapahtumat");
-    ui->labelOption5->setText("");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-    ui->labelOption8->setText("");
-    ui->labelPrompt->setText("Valitse toiminto");
-*/
-
-    connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum3,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum4,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum5,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum6,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum7,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum8,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum9,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption2,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
@@ -47,10 +25,6 @@ Mainmenu::~Mainmenu()
     delete ui;
 }
 
-void Mainmenu::numberClickHandler()
-{
-
-}
 
 void Mainmenu::commandClickHandler()
 {
@@ -66,7 +40,7 @@ void Mainmenu::commandClickHandler()
         olioWithdraw->onNpeuroButtonClicked(username);
         olioWithdraw->onNpprosenttiButtonClicked(username);
         olioWithdraw->onMuuntokerroinButtonClicked(username);
-        olioWithdraw->show();
+        olioWithdraw->showFullScreen();
     }
     else if (button->objectName()=="btOption2"){
         olioTransfer = new Transfer(this);
@@ -78,43 +52,28 @@ void Mainmenu::commandClickHandler()
         olioTransfer->onNpeuroButtonClicked(username);
         olioTransfer->onNpprosenttiButtonClicked(username);
         olioTransfer->onMuuntokerroinButtonClicked(username);
-        olioTransfer->show();
+        olioTransfer->showFullScreen();
     }
     else if (button->objectName()=="btOption3"){
-
         olioSaldo = new Saldo(this);
         olioSaldo->setToken(token);
         olioSaldo->setUsername(username);   
         olioSaldo->setKieli(kieli);
         olioSaldo->onSaldoButtonClicked(username);
         olioSaldo->onValuuttaButtonClicked(username);
-        olioSaldo->show();
+        olioSaldo->showFullScreen();
     }
     else if (button->objectName()=="btOption4"){
         OlioTT = new Tilitapahtuma(this);
+        OlioTT->setToken(token);
+        OlioTT->setUsername(username);
+        OlioTT->setKieli(kieli);
+        OlioTT->onTTButtonClicked(username, 0);
         OlioTT->showFullScreen();
-    }
-    else if (button->objectName()=="btOption5"){
-
-    }
-    else if (button->objectName()=="btOption6"){
-
-    }
-    else if (button->objectName()=="btOption7"){
-
-    }
-    else if (button->objectName()=="btOption8"){
-
     }
     else if (button->objectName()=="btStop"){
         emit logoutRequested();
         accept();
-    }
-    else if (button->objectName()=="btCancel"){
-
-    }
-    else if (button->objectName()=="btAccept"){
-
     }
 }
 
@@ -128,43 +87,6 @@ void Mainmenu::setToken(const QByteArray &newToken)
 {
     token = newToken;
     qDebug()<<"Token Mainmenu luokassa: "<<token;
-}
-void Mainmenu::on_btOption4_clicked()  // nappi jolla siirrytään Tilitapahtuma ikkunaan
-{
-    QString site_url="http://localhost:3000/Tilitapahtuma";
-    QNetworkRequest request((QUrl(site_url)));
-    //WEBTOKEN ALKU
-    request.setRawHeader(QByteArray("Authorization"),(token));
-    //WEBTOKEN LOPPU
-    getManager = new QNetworkAccessManager(this);
-    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getTT(QNetworkReply*)));
-    reply = getManager->get(request);
-    // QSqlQuery query;
-    qDebug() << "Tilitapahtumat nappia on painettu";
-
-}
-void Mainmenu::getTT(QNetworkReply *reply)
-{
-    response_data = reply->readAll();
-    qDebug() << "response data on nyt:" + response_data;
-
-    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
-    QJsonArray json_array = json_doc.array();
-    QStringList tilitapahtumaData;
-    int maxRows = qMin(5, json_array.size() - currentIndex);
-    for (int i = 0; i < maxRows; ++i) {
-        QJsonObject json_obj = json_array.at(currentIndex + i).toObject();
-        QString rowData = QString::number(json_obj["Saldomuutos"].toInt()) + "     " +
-                          QString::number(json_obj["Aikaleima"].toInt()) + "     " +
-                          json_obj["Muutoslaji"].toString() + "     " +
-                          QString::number(json_obj["idTili"].toInt()) + "     " +
-                          json_obj["Paikkatieto"].toString();
-        tilitapahtumaData.append(rowData);
-    }
-    tilitapahtumalista = new Tilitapahtuma(this);
-    tilitapahtumalista->setTilitapahtumaData(tilitapahtumaData);
-    tilitapahtumalista->showFullScreen();
-    currentIndex += maxRows;
 }
 
 void Mainmenu::setKieli(const int &newKieli)
@@ -202,7 +124,15 @@ void Mainmenu::setKieli(const int &newKieli)
         ui->labelOption8->setText("");
         ui->labelPrompt->setText("Select an action");
     }else{
-        ui->labelPrompt->setText("The account balance is");
+        ui->labelOption1->setText("Withdraw");
+        ui->labelOption2->setText("Transfer");
+        ui->labelOption3->setText("Account balance");
+        ui->labelOption4->setText("Account Transactions");
+        ui->labelOption5->setText("");
+        ui->labelOption6->setText(" ");
+        ui->labelOption7->setText(" ");
+        ui->labelOption8->setText("");
+        ui->labelPrompt->setText("Select an action");
          qDebug()<<"Kieli ui:ssa Mainmenu luokassa: "<<kieli;
     }
 }

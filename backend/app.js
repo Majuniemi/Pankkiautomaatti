@@ -25,7 +25,7 @@ app.use(authenticateToken);    //Tämän jälkeen olevat reitit ovat suojattuja 
 app.use('/Kortti', KorttiRouter);
 app.use('/Asiakas', AsiakasRouter);
 app.use('/Tili', TiliRouter);
-app.use('/Tilitapahtuma', TiliRouter);
+app.use('/Tilitapahtuma', TilitapahtumaRouter);
 
 
 function authenticateToken(req, res, next) {

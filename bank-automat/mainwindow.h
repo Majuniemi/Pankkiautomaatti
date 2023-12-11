@@ -19,15 +19,8 @@ public:
     ~MainWindow();
 
 public slots:
-    void numberClickHandler();
     void commandClickHandler();
     void readData();
- /*   void onbtOption5clicked();
-    void onbtOption6clicked();
-    void onbtOption7clicked();
-    void onbtOption8clicked();
-    void translateTo(const QString &lang);
-   void updateFlagVisibility(bool visible); */
 void handleLogout();
 
 private:

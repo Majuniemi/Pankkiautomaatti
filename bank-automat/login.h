@@ -52,7 +52,6 @@ private:
     QByteArray token;
     Mainmenu *olioMainmenu;
     QString username;
-    QString saldo;
     int kieli;
 };
 

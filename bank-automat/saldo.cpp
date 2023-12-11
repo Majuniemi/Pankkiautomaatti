@@ -22,18 +22,7 @@ Saldo::Saldo(QWidget *parent) :
     ui->labelOption7->setText(" ");
     ui->labelOption8->setText("");
 
-
-    connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption2,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption4,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption5,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption6,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption7,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption8,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
 }
 
 Saldo::~Saldo()
@@ -45,63 +34,16 @@ void Saldo::commandClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-    if (button->objectName()=="btOption1"){
-
-    }
-    else if (button->objectName()=="btOption2"){
-
-    }
-    else if (button->objectName()=="btOption3"){
-
-    }
-    else if (button->objectName()=="btOption4"){
-
-    }
-    else if (button->objectName()=="btOption5"){
-
-    }
-    else if (button->objectName()=="btOption6"){
-
-    }
-    else if (button->objectName()=="btOption7"){
-
-    }
-    else if (button->objectName()=="btOption8"){
-
-    }
-    else if (button->objectName()=="btStop"){
+    if (button->objectName()=="btStop"){
         accept();
-    }
-    else if (button->objectName()=="btCancel"){
-
-    }
-    else if (button->objectName()=="btAccept"){
-
     }
 }
 
 void Saldo::setUsername(const QString &newUsername)
 {
     username = newUsername;
-
 }
 
-void Saldo::showUsername()
-{
-    ui->labelInput->setText(username);
-}
-/*
-void Saldo::setSaldo(const QString &newSaldo)
-{
-    saldo = newSaldo;
-
-    qDebug()<<"Tallennettu saldo luokassa: "<<saldo;
-}
-
-void Saldo::showSaldo()
-{
-    ui->labelInput->setText(saldo);
-}*/
 void Saldo::setToken(const QByteArray &newToken)
 {
     token = newToken;
@@ -132,18 +74,6 @@ void Saldo::getSaldoSlot(QNetworkReply *reply)
     reply->deleteLater();
     getManager->deleteLater();
    }
-/*
-void Saldo::setValuutta(const QString &newValuutta)
-{
-    valuutta = newValuutta;
-
-    qDebug()<<"Tallennettu valuutta luokassa: "<<valuutta;
-}
-
-void Saldo::showValuutta()
-{
-    ui->labelInput2->setText(valuutta);
-}*/
 
 void Saldo::onValuuttaButtonClicked(QString tilinumero)
 {
