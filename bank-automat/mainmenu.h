@@ -2,6 +2,7 @@
 #define MAINMENU_H
 
 #include "saldo.h"
+#include "tilitapahtuma.h"
 #include "withdraw.h"
 #include "transfer.h"
 #include <QDialog>
@@ -26,6 +27,9 @@ public slots:
     void numberClickHandler();
     void commandClickHandler();
 
+signals:
+    void logoutRequested();
+
 private:
     Ui::Mainmenu *ui;
     Withdraw *olioWithdraw;
@@ -39,6 +43,14 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
     int kieli;
+    Tilitapahtuma *OlioTT;
+    Tilitapahtuma *tilitapahtumalista;
+    int currentIndex;
+
+private slots:
+    void on_btOption4_clicked(); //Tilitapahtuma
+    void getTT(QNetworkReply *reply); //GetTilitapahtuma
+
 };
 
 #endif // MAINMENU_H

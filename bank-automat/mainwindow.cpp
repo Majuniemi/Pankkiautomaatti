@@ -40,29 +40,37 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     connect(ui->btCancel, SIGNAL(clicked()), this, SLOT(commandClickHandler()));
     connect(ui->btAccept, SIGNAL(clicked()), this, SLOT(commandClickHandler()));
 
-    serialPort = new QSerialPort(this);
-    serialPort->setPortName("/dev/tty.usbmodem13101");
-    serialPort->setBaudRate(QSerialPort::Baud9600);
-    serialPort->setDataBits(QSerialPort::Data8);
-    serialPort->setParity(QSerialPort::NoParity);
-    serialPort->setStopBits(QSerialPort::OneStop);
-
-    if (serialPort->open(QIODevice::ReadWrite))
-    {
-        qDebug() << "Sarjaportti avattu onnistuneesti";
+    serialPort = new QSerialPort(this);                                                 //Luodaan sarjamonitoriyhteys, jotta voidaan lukea RFID lukijalla tägin tiedot Qt:ssa
+    QSerialPortInfo valittuPortti;
+    foreach (const QSerialPortInfo &portInfo, QSerialPortInfo::availablePorts()) {      //Luetaan sarjaporteissa olevia laitteita ja valitaan niistä Olimex merkin laite
+        if (portInfo.manufacturer() == "Olimex Ltd.") {
+            valittuPortti = portInfo;
+            break;
+        }
     }
-    else
-    {
-        qDebug() << "Sarjaportin yhdistämisessä virhe: " << serialPort->errorString();
+    if (!valittuPortti.isNull()) {
+        serialPort->setPortName(valittuPortti.portName());                              //Käytetään ylläolevalla Olimex ehdolla löydettyä sarjaporttia
+    } else {
+        qDebug() << "RFID-lukijaa ei löytynyt.";
     }
+    serialPort->setBaudRate(QSerialPort::Baud9600);                                     //Asettaa baudinopeuden 9600 bit/sek
+    serialPort->setDataBits(QSerialPort::Data8);                                        //Asettaa bittien määrän 8:n bittiin
+    serialPort->setParity(QSerialPort::NoParity);                                       //Asettaa pariteetin Ei-tilaan
+    serialPort->setStopBits(QSerialPort::OneStop);                                      //Asettaa stopbittien määräksi 1
+        if (serialPort->open(QIODevice::ReadWrite)) {                                   //Tulostaa debug tietona, että onnistuuko sarjaportin yhteys.
+            qDebug() << "Sarjaportti avattu onnistuneesti";
+        } else {
+            qDebug() << "Sarjaportin yhdistämisessä virhe: " << serialPort->errorString();
+        }
+        qDebug()<<"Sarjaportin nimi on: "<< valittuPortti.portName();
 
-    connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);
-
-
-    connect(ui->btOption5, SIGNAL(clicked()), this, SLOT(on_btOption5_clicked()));
-    connect(ui->btOption6, SIGNAL(clicked()), this, SLOT(on_btOption6_clicked()));
-    connect(ui->btOption7, SIGNAL(clicked()), this, SLOT(on_btOption7_clicked()));
-    connect(ui->btOption8, SIGNAL(clicked()), this, SLOT(on_btOption8_clicked()));
+        connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);      //Siirtyy readData-slottiin, kun RFID-lukija lukee tiedon
+        serialPort->clear();                                                            //Tyhjennetään sarjaportin lukemat tiedot
+        
+        connect(ui->btOption5, SIGNAL(clicked()), this, SLOT(on_btOption5_clicked()));
+        connect(ui->btOption6, SIGNAL(clicked()), this, SLOT(on_btOption6_clicked()));
+        connect(ui->btOption7, SIGNAL(clicked()), this, SLOT(on_btOption7_clicked()));
+        connect(ui->btOption8, SIGNAL(clicked()), this, SLOT(on_btOption8_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -131,10 +139,10 @@ void MainWindow::commandClickHandler()
         }
         else if (button->objectName() == "btOption7")
         {
-            //   translateTo("en");
-               // Englannin käännös
-           //    ui->labelOption5->setText("");
-           //    ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
+            //  translateTo("en");
+            //  Englannin käännös
+            //  ui->labelOption5->setText("");
+            //  ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
                ui->labelOption8->setText("Log in");
                ui->labelPrompt->setText("Welcome!");
                ui->labelOption5->setText(" ");
@@ -149,7 +157,7 @@ void MainWindow::commandClickHandler()
             olioLogin = new Login(this);
             olioLogin->setKieli(kieli);
             olioLogin->lueKortti("06000649CE");
-            olioLogin->showFullScreen();
+            olioLogin->show();
         }
         else if (button->objectName() == "btStop")
         {
@@ -175,105 +183,32 @@ void MainWindow::updateFlagVisibility(bool visible)
 
 void MainWindow::readData()
 {
-    QString RFIDtieto = serialPort->readAll();
+    qDebug()<<"ReadData luokassa: "<<kirjautunut;
+    if (!kirjautunut) {                                                                 //Suoritetaan vain, jos ei olla sisäänkirjautuneena
+        QString RFIDtieto = serialPort->readAll();                                      //Luetaan RFID-tägin sisältämä tieto
+        //qDebug()<<"Kortinlukija luki:" << RFIDtieto;
 
-    QString korttinumero;
-    for (const QChar &ch : RFIDtieto)
-    {
-        if (ch.isDigit() || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f'))
-        {
-            korttinumero.append(ch);
+        QString korttinumero;
+        for (auto it = RFIDtieto.begin(); it != RFIDtieto.end(); ++it) {                //Siivotaan ylimääräiset merkit vastauksena tulleesta tiedosta, jäljelle jää pelkkä korttinumero
+            const QChar &ch = *it;
+            if (ch.isDigit() || (ch >= 'A' && ch <= 'F') || (ch >= 'a' && ch <= 'f')) {
+                korttinumero.append(ch);
+            }
         }
-    }
-
-    olioLogin = new Login(this);
-    olioLogin->setKieli(kieli);
-    olioLogin->lueKortti(korttinumero);
-    olioLogin->show();
-}
-/*
-void MainWindow::onbtOption5clicked()
-{
-   // translateTo("fi");
-    // Suomen käännös
-    ui->labelOption5->setText("");
-    ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Suomenlippu.png"));
-    ui->labelOption8->setText("Kirjaudu sisään");
-    ui->labelPrompt->setText("Tervetuloa!");
- //   ui->labelOption5->setText(" ");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-}
-
-void MainWindow::onbtOption6clicked()
-{
- //   translateTo("sv");
-    // Ruotsin käännös
-    ui->labelOption5->setText("");
-    ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Ruotsinlippu.png"));
-    ui->labelOption8->setText("Log in");
-    ui->labelPrompt->setText("Välkommen!");
- //   ui->labelOption5->setText(" ");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-}
-
-void MainWindow::onbtOption7clicked()
-{
- //   translateTo("en");
-    // Englannin käännös
-    ui->labelOption5->setText("");
-    ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
-    ui->labelOption8->setText("Log in");
-    ui->labelPrompt->setText("Welcome!");
- //   ui->labelOption5->setText(" ");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-}
-
-void MainWindow::onbtOption8clicked()
-{
-    translateTo("en");
-    ui->labelOption5->setText(" ");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-}
-
-void MainWindow::translateTo(const QString &lang)
-{
-    QString language = lang.toLower();
-
-    if (language == "fi")
-    {
-        // Suomen käännös
-        ui->labelOption5->setText("");
-        ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Suomenlippu.png"));
-        ui->labelOption8->setText("Kirjaudu sisään");
-        ui->labelPrompt->setText("Tervetuloa!");
-    }
-    else if (language == "en")
-    {
-        // Englannin käännös
-        ui->labelOption5->setText("");
-        ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Brittilippu.png"));
-        ui->labelOption8->setText("Log in");
-        ui->labelPrompt->setText("Welcome!");
-    }
-    else if (language == "sv")
-    {
-        // Ruotsin käännös
-        ui->labelOption5->setText("");
-        ui->labelOption5->setPixmap(QPixmap(":/Liput/Liput/Ruotsinlippu.png"));
-        ui->labelOption8->setText("Log in");
-        ui->labelPrompt->setText("Välkommen!");
-    }
-    else
-    {
-        // Oletuskieli
-        ui->labelOption1->setText("Language");
-        ui->labelOption5->setPixmap(QPixmap());
-        ui->labelOption8->setText("Log in");
-        ui->labelPrompt->setText("Welcome!");
+        //qDebug()<<"Korttinumero nyt:" << korttinumero;
+        //qDebug()<<"RFIDtieto nyt: "<<RFIDtieto;
+        olioLogin = new Login(this);
+        olioLogin->lueKortti(korttinumero);                                             //Lähetetään korttinumero signaalissa eteenpäin
+        olioLogin->setKieli(kieli);
+        olioLogin->show();
+        connect(olioLogin, &Login::logoutRequested, this, &MainWindow::handleLogout);   //Kun Login luokan logoutReq signaali tulee, niin siirrytään handleLogouttiin
+        kirjautunut = true;                                                             //Vaihdetaan kirjautunut tieto "sisäänkirjautuneeksi"
     }
 }
-*/
+
+void MainWindow::handleLogout()
+{
+    kirjautunut = false;                                                                //Asetetaan kirjautunut uloskirjautuneeksi
+    serialPort->clear();                                                                //Tyhjennetään sarjaportin lukemat tiedot
+    //qDebug()<<"Päästiin MainWindow luokassa handleLogouttiin";
+}

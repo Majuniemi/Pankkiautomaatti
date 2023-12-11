@@ -158,7 +158,7 @@ void Transfer::setUsername(const QString &newUsername)
 void Transfer::setToken(const QByteArray &newToken)
 {
     token = newToken;
-    qDebug()<<"Token Mainmenu luokassa: "<<&token;
+    qDebug()<<"Token Mainmenu luokassa: "<<token;
 }
 void Transfer::showUsername()
 {

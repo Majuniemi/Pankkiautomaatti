@@ -84,6 +84,7 @@ void Login::cancelClickHandler()
 
 void Login::stopClickHandler()
 {
+    emit logoutRequested();
     accept();                                                                       //Sulkee X näppäintä painettaessa Login-ikkunan
 }
 
@@ -114,13 +115,25 @@ void Login::loginSlot(QNetworkReply *reply)
     response_data=reply->readAll();                                                 //Luetaan QNetworkReplyn tiedot ja tallennetaan se response_data jäsenmuuttujaan
     //qDebug()<<response_data;
     if(response_data.length()<2){
-        qDebug()<<"Palvelin ei vastaa";
-        ui->labelPrompt->setText("Palvelin ei vastaa");
+        if (kieli == 1) {
+            qDebug()<<"Palvelin ei vastaa";
+            ui->labelPrompt->setText("Palvelin ei vastaa");
+        } else if (kieli == 2) {
+            ui->labelPrompt->setText("Servern svarar inte");
+        } else if (kieli == 3) {
+            ui->labelPrompt->setText("Server not responding");
+        }
     }
     else {
         if(response_data=="-4078"){
-            qDebug()<<"Virhe tietokantayhteydessä";
-            ui->labelPrompt->setText("Virhe tietokantayhteydessä");
+            if (kieli == 1) {
+                qDebug()<<"Virhe tietokantayhteydessä";
+                ui->labelPrompt->setText("Virhe tietokantayhteydessä");
+            } else if (kieli == 2) {
+                ui->labelPrompt->setText("Fel i databasanslutningen");
+            } else if (kieli == 3) {
+                ui->labelPrompt->setText("Error in database connection");
+            }
         }
         else {
             if (response_data!="false" && response_data.length()>20){
@@ -136,11 +149,22 @@ void Login::loginSlot(QNetworkReply *reply)
                 getcountManager = new QNetworkAccessManager(this);
                 connect(getcountManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getKorttiSlot(QNetworkReply*)));   //Signal-Slot, joka vie operaation valmistuttua getKorttiSlotiin
                 replyKortti = getcountManager->get(request);                        //Lähetetään Get-pyyntö palvelimelle ja tallennetaan vastaus replyKortti jäsenmuuttujaan
+                ui->lineEditPassword->clear();
             }
             else{
-                qDebug()<<"Korttinumero tai PIN-koodi väärin";
-                ui->labelPrompt->setText("Korttinumero tai PIN-koodi väärin");
+                if (kieli == 1) {
+                    qDebug()<<"Korttinumero tai PIN-koodi väärin";
+                    ui->labelPrompt->setText("Korttinumero tai PIN-koodi väärin");
+                    ui->lineEditPassword->clear();
+                } else if (kieli == 2) {
+                    qDebug()<<"Felaktigt kortnummer eller PIN-kod";
+                    ui->labelPrompt->setText("Felaktigt kortnummer eller PIN-kod");
+                    ui->lineEditPassword->clear();
+                } else if (kieli == 3) {
+                qDebug()<<"Incorrect card number or PIN code";
+                ui->labelPrompt->setText("Incorrect card number or PIN code");
                 ui->lineEditPassword->clear();
+                }
             }
         }
     }
@@ -170,7 +194,13 @@ void Login::getKorttiSlot(QNetworkReply *reply)
         ui->labelOption7->setText("Debit");
         ui->labelOption8->setText(" ");
         ui->lineEditPassword->hide();
-        ui->labelPrompt->setText("Valitse debit/credit");
+        if (kieli == 1) {
+            ui->labelPrompt->setText("Valitse debit/credit");
+        } else if (kieli == 2) {
+            ui->labelPrompt->setText("Välj debet/kredit");
+        } else if (kieli == 3) {
+            ui->labelPrompt->setText("Select debit/credit");
+        }
         ui->label_2->setText(" ");
     }
     else if (response_dataKortti=="{\"count\":1}"){
@@ -217,8 +247,10 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu = new Mainmenu(this);
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
+        olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
+        connect(olioMainmenu, &Mainmenu::logoutRequested, this, &Login::handleLogout);
         olioMainmenu->setKieli(kieli);
-        olioMainmenu->showFullScreen();                                                       //Avataan Mainmenu-olion ikkuna
+        olioMainmenu->showFullScreen();                                             //Avataan Mainmenu-olion ikkuna
         accept();                                                                   //Suljetaan Login-olion ikkuna
     }
     else {
@@ -228,8 +260,14 @@ void Login::getTiliSlot(QNetworkReply *reply)
     reply->deleteLater();                                                           //Poistetaan oliot ja pidetään huolta muistinhallinnasta
     getoneManager->deleteLater();
 }
+
+void Login::handleLogout()
+{
+    emit logoutRequested();
+    //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
+}
 void Login::setKieli(const int &newKieli)
 {
     kieli = newKieli;
-    qDebug()<<"Kieli Mainmenu luokassa: "<<kieli;
+    qDebug()<<"Kieli Login luokassa: "<<kieli;
 }
