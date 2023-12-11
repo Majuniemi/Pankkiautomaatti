@@ -174,7 +174,7 @@ void Transfer::onNostoButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getNostoSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getNostoSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -204,7 +204,7 @@ void Transfer::onLuottorajaButtonClicked(QString tilinumero)
     //WEBTOKEN LOPPU
     getManager = new QNetworkAccessManager(this);
 
-    connect(getManager, SIGNAL(finished (QNetworkReply*)), this, SLOT(getLuottorajaSlot(QNetworkReply*)));
+    connect(getManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(getLuottorajaSlot(QNetworkReply*)));
 
     reply = getManager->get(request);
 }
@@ -369,13 +369,16 @@ void Transfer::getTiliSlot(QNetworkReply *reply)
 
 
 
-    if (siirtokohde==1){
-        ui->labelPrompt->setText("Syötä siirrettävä määrä");
+    if (siirtokohde==1)
+    {
+        QString teksti = ui->labelInput3->text();
+        ui->labelPrompt->setText(teksti);
         ui->labelInput_2->setText("");
         ui->labelInput->setText("");
     }else{
+        QString teksti = ui->labelInput4->text();
         ui->labelInput_2->setText("");
-        ui->labelInput->setText("Tilinumero virheellinen");
+        ui->labelInput->setText(teksti);
     }
 
     reply->deleteLater();
@@ -433,6 +436,10 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelOption8->setText("");
            ui->labelPrompt->setText("Syötä tili jolle haluat siirtää rahaa");
            ui->labelInput->setText(" ");
+           ui->labelInput3->setText("Syötä siirrettävä määrä");
+           ui->labelInput3->hide();
+           ui->labelInput4->setText("Tilinumero on virheellinen");
+           ui->labelInput4->hide();
     }else if (kieli==2){
         ui->labelOption1->setText(" ");
            ui->labelOption2->setText(" ");
@@ -444,6 +451,10 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelOption8->setText("");
            ui->labelPrompt->setText("Ange kontot som du vill överföra pengar till");
            ui->labelInput->setText(" ");
+           ui->labelInput3->setText("Ange beloppet som ska överföras");
+           ui->labelInput3->hide();
+           ui->labelInput4->setText("Kontonumret är felaktigt");
+           ui->labelInput4->hide();
     }else if (kieli==3){
         ui->labelOption1->setText(" ");
            ui->labelOption2->setText(" ");
@@ -455,6 +466,10 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelOption8->setText("");
            ui->labelPrompt->setText("Enter the account of recipient");
            ui->labelInput->setText(" ");
+           ui->labelInput3->setText("Enter the amount to transfer");
+           ui->labelInput3->hide();
+           ui->labelInput4->setText("The account number is incorrect");
+           ui->labelInput4->hide();
     }else{
          qDebug()<<"Kieli ui:ssa Mainmenu luokassa: "<<kieli;
          ui->labelOption1->setText(" ");
@@ -467,5 +482,9 @@ void Transfer::setKieli(const int &newKieli)
             ui->labelOption8->setText("");
             ui->labelPrompt->setText("Enter the account of recipient");
             ui->labelInput->setText(" ");
+            ui->labelInput3->setText("Enter the amount to transfer");
+            ui->labelInput3->hide();
+            ui->labelInput4->setText("The account number is incorrect");
+            ui->labelInput4->hide();
     }
 }
