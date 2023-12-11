@@ -13,8 +13,10 @@ router.get('/', function (request, response) {
     });
 });
 
-router.get('/:id', function (request, response) {
-    Tilitapahtuma.getById(request.params.id, function (err, dbResult) {
+router.get('/getFive/:id', function (request, response) {
+    const id = request.params.id;
+    const offset = request.query.offset || 0; // Oletusarvo on 0, jos offset-parametria ei anneta
+    Tilitapahtuma.getById(id, offset, function (err, dbResult) {
         if (err) {
             response.json(err);
         } else {

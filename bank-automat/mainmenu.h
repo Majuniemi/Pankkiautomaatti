@@ -24,7 +24,6 @@ public:
     void setKieli(const int &newKieli);
 
 public slots:
-    void numberClickHandler();
     void commandClickHandler();
 
 signals:
@@ -35,6 +34,7 @@ private:
     Withdraw *olioWithdraw;
     Saldo *olioSaldo;
     Transfer *olioTransfer;
+    Tilitapahtuma *OlioTT;
     QString username;
     QString saldo;
     QString valuutta;
@@ -43,14 +43,6 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
     int kieli;
-    Tilitapahtuma *OlioTT;
-    Tilitapahtuma *tilitapahtumalista;
-    int currentIndex;
-
-private slots:
-    void on_btOption4_clicked(); //Tilitapahtuma
-    void getTT(QNetworkReply *reply); //GetTilitapahtuma
-
 };
 
 #endif // MAINMENU_H

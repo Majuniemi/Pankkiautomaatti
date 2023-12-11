@@ -6,16 +6,6 @@ Transfer::Transfer(QWidget *parent)
     , ui(new Ui::Transfer)
 {
     ui->setupUi(this);
-/*    ui->labelOption1->setText(" ");
-    ui->labelOption2->setText(" ");
-    ui->labelOption3->setText(" ");
-    ui->labelOption4->setText(" ");
-    ui->labelOption5->setText(" ");
-    ui->labelOption6->setText(" ");
-    ui->labelOption7->setText(" ");
-    ui->labelOption8->setText("");
-    ui->labelPrompt->setText("Syötä tili jolle haluat siirtää rahaa");
-    ui->labelInput->setText(" ");*/
 
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -27,14 +17,6 @@ Transfer::Transfer(QWidget *parent)
     connect(ui->btNum8,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum9,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum0,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
-    connect(ui->btOption1,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption2,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption3,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption4,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption5,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption6,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption7,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
-    connect(ui->btOption8,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btStop,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btCancel,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
     connect(ui->btAccept,SIGNAL(clicked(bool)),this,SLOT(commandClickHandler()));
@@ -52,7 +34,9 @@ void Transfer::numberClickHandler()
 
     if(button){
         QLabel *currentEdit = ui->labelInput;
-        currentEdit->setText(currentEdit->text() + button->text());
+        QString buttonName = button->objectName();                                      // teksti vaihdettu kuvaan, joten otetaan arvo nimestä
+        QString lastCharacter = buttonName.right(1);
+        currentEdit->setText(currentEdit->text() + lastCharacter);
     }
 }
 
@@ -60,31 +44,7 @@ void Transfer::commandClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());
 
-    if (button->objectName()=="btOption1"){
-
-    }
-    else if (button->objectName()=="btOption2"){
-
-    }
-    else if (button->objectName()=="btOption3"){
-
-    }
-    else if (button->objectName()=="btOption4"){
-
-    }
-    else if (button->objectName()=="btOption5"){
-
-    }
-    else if (button->objectName()=="btOption6"){
-
-    }
-    else if (button->objectName()=="btOption7"){
-
-    }
-    else if (button->objectName()=="btOption8"){
-
-    }
-    else if (button->objectName()=="btStop"){
+    if (button->objectName()=="btStop"){
         accept();
     }
     else if (button->objectName()=="btCancel"){
@@ -113,34 +73,38 @@ void Transfer::commandClickHandler()
 
         QString siirto = ui->labelInput->text();
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Siirsit");
-            ui->labelInput->setText(siirto +" euroa");
-            tilimiinus=saldo.toDouble()-((siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            if(saldo.toDouble()>(siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText(siirto +" Euro");
+            tilimiinus=saldo.toDouble()-((siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             upSaldo(saavatilinumero, siirto);
             aikaleima = QDateTime::currentDateTime();
-            uusiTilitapahtuma(aikaleima, siirto, username);
-            uusiTilitapahtuma(aikaleima, siirto, saavatilinumero);
+            uusiTilitapahtuma(aikaleima, siirto, "Siirto", username);
+            uusiTilitapahtuma(aikaleima, siirto, "Pano", saavatilinumero);
 
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+                QString teksti = ui->textStorage2->text();
+                ui->labelPrompt->setText(teksti);
             }
         }else{
-            if(luottoraja.toDouble()>(siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Siirsit");
-            ui->labelInput->setText(siirto +" euroa");
-            tilimiinus=saldo.toDouble()+((siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            if(luottoraja.toDouble()>(siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText(siirto +" Euro");
+            tilimiinus=saldo.toDouble()+((siirto.toDouble()*muuntokerroin.toDouble())+((siirto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             upSaldo(saavatilinumero, siirto);
             aikaleima = QDateTime::currentDateTime();
-            uusiTilitapahtuma(aikaleima, siirto, username);
-            uusiTilitapahtuma(aikaleima, siirto, saavatilinumero);
+            uusiTilitapahtuma(aikaleima, siirto, "Siirto", username);
+            uusiTilitapahtuma(aikaleima, siirto, "Pano", saavatilinumero);
 
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
             }
         }
         }
@@ -159,10 +123,6 @@ void Transfer::setToken(const QByteArray &newToken)
 {
     token = newToken;
     qDebug()<<"Token Mainmenu luokassa: "<<token;
-}
-void Transfer::showUsername()
-{
-     ui->labelInput->setText(username);
 }
 
 void Transfer::onNostoButtonClicked(QString tilinumero)
@@ -385,7 +345,7 @@ void Transfer::getTiliSlot(QNetworkReply *reply)
     getManager->deleteLater();
 }
 
-void Transfer::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QString idTili) {
+void Transfer::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QString muutosLaji, QString idTili) {
     QNetworkAccessManager* manager = new QNetworkAccessManager(this);
 
     connect(manager, &QNetworkAccessManager::finished, [=](QNetworkReply* reply) {
@@ -414,7 +374,7 @@ void Transfer::uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QStri
     QUrlQuery postData;
     postData.addQueryItem("Aikaleima", aikaleima.toString(Qt::ISODate));
     postData.addQueryItem("Saldomuutos", saldoMuutos);
-    postData.addQueryItem("Muutoslaji", "Siirto");
+    postData.addQueryItem("Muutoslaji", muutosLaji);
     postData.addQueryItem("idTili", idTili);
     postData.addQueryItem("Paikkatieto", "ATM");
 
@@ -440,6 +400,12 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelInput3->hide();
            ui->labelInput4->setText("Tilinumero on virheellinen");
            ui->labelInput4->hide();
+           ui->textStorage1->setText("Siirsit");
+           ui->textStorage1->hide();
+           ui->textStorage2->setText("Tiln saldo ei riitä");
+           ui->textStorage2->hide();
+           ui->textStorage3->setText("Tilin luotto ei riitä");
+           ui->textStorage3->hide();
     }else if (kieli==2){
         ui->labelOption1->setText(" ");
            ui->labelOption2->setText(" ");
@@ -455,6 +421,12 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelInput3->hide();
            ui->labelInput4->setText("Kontonumret är felaktigt");
            ui->labelInput4->hide();
+           ui->textStorage1->setText("Du överförde");
+           ui->textStorage1->hide();
+           ui->textStorage2->setText("Kontosaldot är otillräckligt");
+           ui->textStorage2->hide();
+           ui->textStorage3->setText("Kontokrediten är otillräcklig");
+           ui->textStorage3->hide();
     }else if (kieli==3){
         ui->labelOption1->setText(" ");
            ui->labelOption2->setText(" ");
@@ -470,6 +442,12 @@ void Transfer::setKieli(const int &newKieli)
            ui->labelInput3->hide();
            ui->labelInput4->setText("The account number is incorrect");
            ui->labelInput4->hide();
+           ui->textStorage1->setText("Transferred ");
+           ui->textStorage1->hide();
+           ui->textStorage2->setText("The account balance is insufficient");
+           ui->textStorage2->hide();
+           ui->textStorage3->setText("Account credit is insufficient");
+           ui->textStorage3->hide();
     }else{
          qDebug()<<"Kieli ui:ssa Mainmenu luokassa: "<<kieli;
          ui->labelOption1->setText(" ");
@@ -486,5 +464,11 @@ void Transfer::setKieli(const int &newKieli)
             ui->labelInput3->hide();
             ui->labelInput4->setText("The account number is incorrect");
             ui->labelInput4->hide();
+            ui->textStorage1->setText("Transferred ");
+            ui->textStorage1->hide();
+            ui->textStorage2->setText("The account balance is insufficient");
+            ui->textStorage2->hide();
+            ui->textStorage3->setText("Account credit is insufficient");
+            ui->textStorage3->hide();
     }
 }

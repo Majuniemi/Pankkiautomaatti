@@ -21,31 +21,21 @@ public:
     ~Withdraw();
 
 public slots:
-    void setKieli(const int &newKieli);
     void commandClickHandler();
     void numberClickHandler();
-    void setToken(const QByteArray &newToken);
 
+    void setToken(const QByteArray &newToken);
     void setUsername(const QString &newUsername);
-    void showUsername();
+    void setKieli(const int &newKieli);
 
     void onNostoButtonClicked(QString tilinumero); // haetaan saldo
-
-
     void onLuottorajaButtonClicked(QString tilinumero); // haetaan luottoraja
-
-
     void onNpeuroButtonClicked(QString tilinumero); // haetaan nostopalkkio euro
-
-
     void onNpprosenttiButtonClicked(QString tilinumero); // haetaan nostopalkkio prosentti
-
-
     void onMuuntokerroinButtonClicked(QString tilinumero); //haetaan valuutan muuntokerroin
 
     void upSaldo(QString id, QString newSaldo); //päivitetään saldo
     void uusiTilitapahtuma(QDateTime aikaleima, QString saldoMuutos, QString idTili);
-
 
 private slots:
     void getNostoSlot (QNetworkReply *reply);
@@ -59,16 +49,16 @@ private:
     QNetworkAccessManager *getManager;
     QNetworkReply *reply;
     QByteArray response_data;
+    QByteArray token;
     QString username;
     QString saldo;
     QString luottoraja;
     QString npeuro;
     QString npprosentti;
     QString muuntokerroin;
-    double tilimiinus;
-    int muusumma=0;
-    QByteArray token;
     QDateTime aikaleima;
+    double tilimiinus;
+    int muusumma=0;   
     int kieli;
 };
 

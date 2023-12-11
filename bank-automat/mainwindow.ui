@@ -51,17 +51,17 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>214</red>
-        <green>214</green>
-        <blue>214</blue>
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="ButtonText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>148</red>
-        <green>17</green>
+        <red>0</red>
+        <green>0</green>
         <blue>0</blue>
        </color>
       </brush>
@@ -69,9 +69,9 @@
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>73</red>
-        <green>12</green>
-        <blue>17</blue>
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
        </color>
       </brush>
      </colorrole>
@@ -1908,7 +1908,7 @@
      <x>0</x>
      <y>0</y>
      <width>2560</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBankSimul_R9">
@@ -1920,9 +1920,9 @@
   </widget>
  </widget>
  <resources>
+  <include location="Napit/Napit.qrc"/>
   <include location="Liput.qrc"/>
   <include location="Tausta.qrc"/>
-  <include location="Napit/Napit.qrc"/>
  </resources>
  <connections/>
 </ui>

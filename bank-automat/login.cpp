@@ -50,13 +50,14 @@ void Login::lueKortti(const QString &korttinumero)
 void Login::numberClickHandler()
 {
     QPushButton * button = qobject_cast<QPushButton*>(sender());                    //Otetaan vastaan Pinkoodi numeronäppäimistöltä
+    QString buttonName = button->objectName();                                      // teksti vaihdettu kuvaan, joten otetaan arvo nimestä
+    QString lastCharacter = buttonName.right(1);
     QLineEdit * currentEdit = ui->lineEditPassword;
-    currentEdit->setText(currentEdit->text() + button->text());
+    currentEdit->setText(currentEdit->text() + lastCharacter);
 }
 
 void Login::enterClickHandler()
 {
-    //qDebug()<<"username on nyt: "<<username;
     QString password = ui->lineEditPassword->text();
     QJsonObject jsonObj;                                                            //Luodaan JSON tieto, joka sisältää idKortti ja Pinkoodi kentät
     jsonObj.insert("idKortti",username);
@@ -113,7 +114,7 @@ void Login::commandClickHandler()
 void Login::loginSlot(QNetworkReply *reply)
 {
     response_data=reply->readAll();                                                 //Luetaan QNetworkReplyn tiedot ja tallennetaan se response_data jäsenmuuttujaan
-    //qDebug()<<response_data;
+    qDebug()<<response_data;
     if(response_data.length()<2){
         if (kieli == 1) {
             qDebug()<<"Palvelin ei vastaa";
@@ -138,12 +139,10 @@ void Login::loginSlot(QNetworkReply *reply)
         else {
             if (response_data!="false" && response_data.length()>20){
                 qDebug()<<"Login Ok";
-                //ui->labelPrompt->setText("Login Ok");
                 token = "Bearer "+response_data;
-                //qDebug()<<token;
+                qDebug()<<token;
 
                 QString site_url="http://localhost:3000/Tili/"+username;            //Määrätään osoite
-                //qDebug()<<"sivun nimi on nyt: "<<site_url;
                 QNetworkRequest request((site_url));
                 request.setRawHeader(QByteArray("Authorization"),(token));          //Tarkistetaan tokenin olemassaolo
                 getcountManager = new QNetworkAccessManager(this);
@@ -176,7 +175,7 @@ void Login::getKorttiSlot(QNetworkReply *reply)
 {
     if(reply->error() == QNetworkReply::NoError) {                                  //Tarkistetaan, onko vastauksessa virheitä
         response_dataKortti=reply->readAll();                                       //Jos virheitä ei ole, niin luetaan ja tallennetaan tieto jäsenmuuttujaan
-        //qDebug()<<"Tilien lkm: "+response_dataKortti;
+        qDebug()<<"Tilien lkm: "+response_dataKortti;
     }
     else {
         qDebug() << "Virhe:" << reply->errorString();                               //Ilmoitetaan virheestä terminaalissa
@@ -206,7 +205,6 @@ void Login::getKorttiSlot(QNetworkReply *reply)
     else if (response_dataKortti=="{\"count\":1}"){
         qDebug()<<"Tähän korttiin on liitetty vain 1 tili";
         QString site_url="http://localhost:3000/Tili/getone/"+username;             //Asetetaan osoite
-        //qDebug()<<"sivun nimi on nyt: "<<site_url;
         QNetworkRequest request((site_url));
         request.setRawHeader(QByteArray("Authorization"),(token));                  //Tarkistetaan tokenin voimassaolo
         getoneManager = new QNetworkAccessManager(this);
@@ -232,10 +230,10 @@ void Login::getKorttiSlot(QNetworkReply *reply)
 
 void Login::getTiliSlot(QNetworkReply *reply)
 {
-    //qDebug()<<"TiliSlotiin asti päästy";
+    qDebug()<<"TiliSlotiin asti päästy";
     if(reply->error() == QNetworkReply::NoError) {                                  //Tarkistetaan, onko vastauksessa virheitä
         response_dataTili=reply->readAll();
-        //qDebug()<<"Tilinumero: "+response_dataTili;
+        qDebug()<<"Tilinumero: "+response_dataTili;
         QString tilinumeroTietokannasta = response_dataTili;
         QString tilinumero;
         for (const QChar &ch : tilinumeroTietokannasta) {                           //Siivotaan ylimääräiset merkit vastauksena tulleesta tiedosta, jäljelle jää pelkkä tilinumero
@@ -247,7 +245,7 @@ void Login::getTiliSlot(QNetworkReply *reply)
         olioMainmenu = new Mainmenu(this);
         olioMainmenu->setToken(token);                                              //Viedään token eteenpäin Mainmenu-luokkaan
         olioMainmenu->setUsername(username);                                        //Viedään tilinumero eteenpäin Mainmenu-luokkaan
-        olioMainmenu->show();                                                       //Avataan Mainmenu-olion ikkuna
+        olioMainmenu->showFullScreen();                                             //Avataan Mainmenu-olion ikkuna
         connect(olioMainmenu, &Mainmenu::logoutRequested, this, &Login::handleLogout);
         olioMainmenu->setKieli(kieli);
         olioMainmenu->showFullScreen();                                             //Avataan Mainmenu-olion ikkuna
@@ -264,7 +262,6 @@ void Login::getTiliSlot(QNetworkReply *reply)
 void Login::handleLogout()
 {
     emit logoutRequested();
-    //qDebug()<<"Päästiin Login luokassa handleLogouttiin";
 }
 void Login::setKieli(const int &newKieli)
 {

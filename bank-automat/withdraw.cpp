@@ -6,17 +6,6 @@ Withdraw::Withdraw(QWidget *parent) :
     ui(new Ui::Withdraw)
 {
     ui->setupUi(this);
-/*  ui->labelOption1->setText("20 euro");
-    ui->labelOption2->setText("40 euro");
-    ui->labelOption3->setText("50 euro");
-    ui->labelOption4->setText("80 euro");
-    ui->labelOption5->setText("100 euro");
-    ui->labelOption6->setText("120 euro");
-    ui->labelOption7->setText(" ");
-    ui->labelOption8->setText("muu");
-    ui->labelPrompt->setText("Valitse summa");
-    ui->labelInput->setText(" ");
-*/
     connect(ui->btNum1,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum2,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
     connect(ui->btNum3,SIGNAL(clicked(bool)),this,SLOT(numberClickHandler()));
@@ -52,7 +41,9 @@ void Withdraw::numberClickHandler()
     if(muusumma == 1){
     if(button){
         QLabel *currentEdit = ui->labelInput;
-        currentEdit->setText(currentEdit->text() + button->text());
+        QString buttonName = button->objectName();                                      // teksti vaihdettu kuvaan, joten otetaan arvo nimestä
+        QString lastCharacter = buttonName.right(1);
+        currentEdit->setText(currentEdit->text() + lastCharacter);
     }
     }
 }
@@ -63,65 +54,73 @@ void Withdraw::commandClickHandler()
 
     if (button->objectName()=="btOption1"){
     if(luottoraja.toDouble()==0.0){
-        if(saldo.toDouble()>(20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-        ui->labelPrompt->setText("Nostit");
-        ui->labelInput->setText("20 euroa");
+        if(saldo.toDouble()>(20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+        QString teksti = ui->textStorage1->text();
+        ui->labelPrompt->setText(teksti);
+        ui->labelInput->setText("20 Euro");
         ui->labelInput2->setText("");
-        tilimiinus=saldo.toDouble()-((20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+        tilimiinus=saldo.toDouble()-(20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*(npprosentti.toDouble()/100)+npeuro.toDouble());
         saldo = QString::number(tilimiinus);
         upSaldo(username, saldo);
         aikaleima = QDateTime::currentDateTime();
         uusiTilitapahtuma(aikaleima, "20.00", username);
         }else{
-           ui->labelPrompt->setText("Tilin Saldo ei riitä");
-           ui->labelInput->setText("");
-           ui->labelInput2->setText("");
+            QString teksti = ui->textStorage2->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("");
+            ui->labelInput2->setText("");
         }
     }else{
-        if(luottoraja.toDouble()>(20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-        ui->labelPrompt->setText("Nostit");
-        ui->labelInput->setText("20 euroa");
+        if(luottoraja.toDouble()>(20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+        QString teksti = ui->textStorage1->text();
+        ui->labelPrompt->setText(teksti);
+        ui->labelInput->setText("20 Euro");
         ui->labelInput2->setText("");
-        tilimiinus=saldo.toDouble()+((20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+        tilimiinus=saldo.toDouble()+((20.0*muuntokerroin.toDouble())+((20*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
         saldo = QString::number(tilimiinus);
         upSaldo(username, saldo);
         aikaleima = QDateTime::currentDateTime();
         uusiTilitapahtuma(aikaleima, "20.00", username);
         }else{
-           ui->labelPrompt->setText("Tilin Luotto ei riitä");
-           ui->labelInput->setText("");
-           ui->labelInput2->setText("");
+            QString teksti = ui->textStorage3->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("");
+            ui->labelInput2->setText("");
         }
     }
     }
     else if (button->objectName()=="btOption2"){
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("40 euroa");
+            if(saldo.toDouble()>(40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("40 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()-((40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()-((40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "40.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+               QString teksti = ui->textStorage2->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }else{
-            if(luottoraja.toDouble()>(40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("40 euroa");
+            if(luottoraja.toDouble()>(40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("40 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()+((40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()+((40.0*muuntokerroin.toDouble())+((40*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "40.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
@@ -129,33 +128,37 @@ void Withdraw::commandClickHandler()
     }
     else if (button->objectName()=="btOption3"){
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("50 euroa");
+            if(saldo.toDouble()>(50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("50 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()-((50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()-((50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "50.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+               QString teksti = ui->textStorage2->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }else{
-            if(luottoraja.toDouble()>(50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("50 euroa");
+            if(luottoraja.toDouble()>(50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("50 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()+((50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()+((50.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "50.00", username);
 
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
@@ -163,33 +166,37 @@ void Withdraw::commandClickHandler()
     }
     else if (button->objectName()=="btOption4"){
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("80 euroa");
+            if(saldo.toDouble()>(80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("80 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()-((80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()-((80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "80.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+               QString teksti = ui->textStorage2->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }else{
-            if(luottoraja.toDouble()>(80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("80 euroa");
+            if(luottoraja.toDouble()>(80.0*muuntokerroin.toDouble())+((50*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("80 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()+((80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()+((80.0*muuntokerroin.toDouble())+((80*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "80.00", username);
 
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
@@ -197,32 +204,36 @@ void Withdraw::commandClickHandler()
     }
     else if (button->objectName()=="btOption5"){
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("100 euroa");
+            if(saldo.toDouble()>(100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("100 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()-((100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()-((100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "100.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+               QString teksti = ui->textStorage2->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }else{
-            if(luottoraja.toDouble()>(100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("100 euroa");
+            if(luottoraja.toDouble()>(100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("100 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()+((100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()+((100.0*muuntokerroin.toDouble())+((100*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "100.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
@@ -230,45 +241,46 @@ void Withdraw::commandClickHandler()
     }
     else if (button->objectName()=="btOption6"){
         if(luottoraja.toDouble()==0.0){
-            if(saldo.toDouble()>(120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("120 euroa");
+            if(saldo.toDouble()>(120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("120 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()-((120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()-((120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "120.00", username);
             }else{
-               ui->labelPrompt->setText("Tilin Saldo ei riitä");
+               QString teksti = ui->textStorage2->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }else{
-            if(luottoraja.toDouble()>(120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-            ui->labelPrompt->setText("Nostit");
-            ui->labelInput->setText("120 euroa");
+            if(luottoraja.toDouble()>(120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()+saldo.toDouble()){
+            QString teksti = ui->textStorage1->text();
+            ui->labelPrompt->setText(teksti);
+            ui->labelInput->setText("120 Euro");
             ui->labelInput2->setText("");
-            tilimiinus=saldo.toDouble()+((120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+            tilimiinus=saldo.toDouble()+((120.0*muuntokerroin.toDouble())+((120*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
             saldo = QString::number(tilimiinus);
             upSaldo(username, saldo);
             aikaleima = QDateTime::currentDateTime();
             uusiTilitapahtuma(aikaleima, "120.00", username);
 
             }else{
-               ui->labelPrompt->setText("Tilin Luotto ei riitä");
+               QString teksti = ui->textStorage3->text();
+               ui->labelPrompt->setText(teksti);
                ui->labelInput->setText("");
                ui->labelInput2->setText("");
             }
         }
     }
-    else if (button->objectName()=="btOption7"){
-
-    }
     else if (button->objectName()=="btOption8"){
     muusumma=1;
-
-    ui->labelPrompt->setText("Syötä haluamasi summa");
+    QString teksti = ui->textStorage4->text();
+    ui->labelPrompt->setText(teksti);
     ui->labelInput->setText("");
     ui->labelInput2->setText("");
     }
@@ -290,21 +302,24 @@ void Withdraw::commandClickHandler()
     QString nosto = ui->labelInput->text();
     if(nosto.toInt()%10 == 0 && nosto.toInt()!=10 && nosto.toInt()!=30){
     if(luottoraja.toDouble()==0.0){
-        if(saldo.toDouble()>(nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()){
-        ui->labelPrompt->setText("Nostit");
-        ui->labelInput->setText(nosto +" euroa");
-        tilimiinus=saldo.toDouble()-((nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
+        if(saldo.toDouble()>(nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble()){
+        QString teksti = ui->textStorage1->text();
+        ui->labelPrompt->setText(teksti);
+        ui->labelInput->setText(nosto +" Euro");
+        tilimiinus=saldo.toDouble()-((nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*(npprosentti.toDouble()/100))+npeuro.toDouble());
         saldo = QString::number(tilimiinus);
         upSaldo(username, saldo);
         aikaleima = QDateTime::currentDateTime();
         uusiTilitapahtuma(aikaleima, nosto, username);
         }else{
-           ui->labelPrompt->setText("Tilin Saldo ei riitä");
+            QString teksti = ui->textStorage2->text();
+            ui->labelPrompt->setText(teksti);
         }
     }else{
         if(luottoraja.toDouble()>(nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble()+saldo.toDouble()){
-        ui->labelPrompt->setText("Nostit");
-        ui->labelInput->setText(nosto +" euroa");
+        QString teksti = ui->textStorage1->text();
+        ui->labelPrompt->setText(teksti);
+        ui->labelInput->setText(nosto +" Euro");
         tilimiinus=saldo.toDouble()+((nosto.toDouble()*muuntokerroin.toDouble())+((nosto.toDouble()*muuntokerroin.toDouble())*npprosentti.toDouble())+npeuro.toDouble());
         saldo = QString::number(tilimiinus);
         upSaldo(username, saldo);
@@ -312,13 +327,17 @@ void Withdraw::commandClickHandler()
         uusiTilitapahtuma(aikaleima, nosto, username);
 
         }else{
-           ui->labelPrompt->setText("Tilin Luotto ei riitä");
+            QString teksti = ui->textStorage3->text();
+            ui->labelPrompt->setText(teksti);
         }
     }
     }else{
-        ui->labelPrompt->setText("Automaatissa vain");
-        ui->labelInput->setText("20 euron ja 50 euron");
-        ui->labelInput2->setText("seteleitä.");
+        QString teksti = ui->textStorage5->text();
+        QString teksti2 = ui->textStorage6->text();
+        QString teksti3 = ui->textStorage7->text();
+        ui->labelPrompt->setText(teksti);
+        ui->labelInput->setText(teksti2);
+        ui->labelInput2->setText(teksti3);
     }
 
     muusumma=0;
@@ -335,10 +354,6 @@ void Withdraw::setToken(const QByteArray &newToken)
 {
     token = newToken;
     qDebug()<<"Token Mainmenu luokassa: "<<&token;
-}
-void Withdraw::showUsername()
-{
-     ui->labelInput->setText(username);
 }
 
 void Withdraw::onNostoButtonClicked(QString tilinumero)
@@ -557,49 +572,105 @@ void Withdraw::setKieli(const int &newKieli)
     kieli = newKieli;
     qDebug()<<"Kieli withdraw luokassa: "<<kieli;
     if (kieli==1){
-        ui->labelOption1->setText("20 euro");
-        ui->labelOption2->setText("40 euro");
-        ui->labelOption3->setText("50 euro");
-        ui->labelOption4->setText("80 euro");
-        ui->labelOption5->setText("100 euro");
-        ui->labelOption6->setText("120 euro");
+        ui->labelOption1->setText("20 Euro");
+        ui->labelOption2->setText("40 Euro");
+        ui->labelOption3->setText("50 Euro");
+        ui->labelOption4->setText("80 Euro");
+        ui->labelOption5->setText("100 Euro");
+        ui->labelOption6->setText("120 Euro");
         ui->labelOption7->setText(" ");
         ui->labelOption8->setText("Muu");
         ui->labelPrompt->setText("Valitse summa");
         ui->labelInput->setText(" ");
+        ui->textStorage1->setText("Nostit");
+        ui->textStorage1->hide();
+        ui->textStorage2->setText("Tiln saldo ei riitä");
+        ui->textStorage2->hide();
+        ui->textStorage3->setText("Tilin luotto ei riitä");
+        ui->textStorage3->hide();
+        ui->textStorage4->setText("Syötä haluamasi summa");
+        ui->textStorage4->hide();
+        ui->textStorage5->setText("Automaatissa vain");
+        ui->textStorage5->hide();
+        ui->textStorage6->setText("20 euron ja 50 euron");
+        ui->textStorage6->hide();
+        ui->textStorage7->setText("seteleitä");
+        ui->textStorage7->hide();
     }else if (kieli==2){
-        ui->labelOption1->setText("20 euro");
-        ui->labelOption2->setText("40 euro");
-        ui->labelOption3->setText("50 euro");
-        ui->labelOption4->setText("80 euro");
-        ui->labelOption5->setText("100 euro");
-        ui->labelOption6->setText("120 euro");
+        ui->labelOption1->setText("20 Euro");
+        ui->labelOption2->setText("40 Euro");
+        ui->labelOption3->setText("50 Euro");
+        ui->labelOption4->setText("80 Euro");
+        ui->labelOption5->setText("100 Euro");
+        ui->labelOption6->setText("120 Euro");
         ui->labelOption7->setText(" ");
         ui->labelOption8->setText("Andra");
         ui->labelPrompt->setText("Välj ett belopp");
         ui->labelInput->setText(" ");
+        ui->textStorage1->setText("Du har tagit ut ");
+        ui->textStorage1->hide();
+        ui->textStorage2->setText("Kontosaldot är otillräckligt");
+        ui->textStorage2->hide();
+        ui->textStorage3->setText("Kontokrediten är otillräcklig");
+        ui->textStorage3->hide();
+        ui->textStorage4->setText("Ange önskat belopp");
+        ui->textStorage4->hide();
+        ui->textStorage5->setText("Endast");
+        ui->textStorage5->hide();
+        ui->textStorage6->setText("20 Euro och 50 Euro");
+        ui->textStorage6->hide();
+        ui->textStorage7->setText("sedlar i automaten");
+        ui->textStorage7->hide();
     }else if (kieli==3){
-        ui->labelOption1->setText("20 euro");
-        ui->labelOption2->setText("40 euro");
-        ui->labelOption3->setText("50 euro");
-        ui->labelOption4->setText("80 euro");
-        ui->labelOption5->setText("100 euro");
-        ui->labelOption6->setText("120 euro");
+        ui->labelOption1->setText("20 Euro");
+        ui->labelOption2->setText("40 Euro");
+        ui->labelOption3->setText("50 Euro");
+        ui->labelOption4->setText("80 Euro");
+        ui->labelOption5->setText("100 Euro");
+        ui->labelOption6->setText("120 Euro");
         ui->labelOption7->setText(" ");
         ui->labelOption8->setText("Custom");
         ui->labelPrompt->setText("Select an amount");
         ui->labelInput->setText(" ");
+        ui->textStorage1->setText("Withdrew");
+        ui->textStorage1->hide();
+        ui->textStorage2->setText("The account balance is insufficient");
+        ui->textStorage2->hide();
+        ui->textStorage3->setText("Account credit is insufficient");
+        ui->textStorage3->hide();
+        ui->textStorage4->setText("Enter the desired amount");
+        ui->textStorage4->hide();
+        ui->textStorage5->setText("Only");
+        ui->textStorage5->hide();
+        ui->textStorage6->setText("20 Euro and 50 Euro");
+        ui->textStorage6->hide();
+        ui->textStorage7->setText("banknotes in the machine");
+        ui->textStorage7->hide();
     }else{
-        ui->labelOption1->setText("20 euro");
-        ui->labelOption2->setText("40 euro");
-        ui->labelOption3->setText("50 euro");
-        ui->labelOption4->setText("80 euro");
-        ui->labelOption5->setText("100 euro");
-        ui->labelOption6->setText("120 euro");
+        ui->labelOption1->setText("20 Euro");
+        ui->labelOption2->setText("40 Euro");
+        ui->labelOption3->setText("50 Euro");
+        ui->labelOption4->setText("80 Euro");
+        ui->labelOption5->setText("100 Euro");
+        ui->labelOption6->setText("120 Euro");
         ui->labelOption7->setText(" ");
         ui->labelOption8->setText("Custom");
         ui->labelPrompt->setText("Select an amount");
         ui->labelInput->setText(" ");
+        ui->textStorage1->setText("Withdrew");
+        ui->textStorage1->hide();
+        ui->textStorage2->setText("The account balance is insufficient");
+        ui->textStorage2->hide();
+        ui->textStorage3->setText("Account credit is insufficient");
+        ui->textStorage3->hide();
+        ui->textStorage4->setText("Enter the desired amount");
+        ui->textStorage4->hide();
+        ui->textStorage5->setText("Only");
+        ui->textStorage5->hide();
+        ui->textStorage6->setText("20 Euro and 50 Euro");
+        ui->textStorage6->hide();
+        ui->textStorage7->setText("banknotes in the machine");
+        ui->textStorage7->hide();
          qDebug()<<"Kieli ui:ssa nosto luokassa: "<<kieli;
     }
 }

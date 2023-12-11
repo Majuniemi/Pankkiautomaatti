@@ -4,9 +4,9 @@ const Tilitapahtumat = {
   getAll: function(callback) {
     return db.query('select * from Tilitapahtumat', callback);
   },
-  getById: function(id, callback) {
-    return db.query('select * from Tilitapahtumat where idTilitapahtumat=?', [id], callback);
-  },
+  getById: function(id, offset, callback) {
+    return db.query('SELECT * FROM Tilitapahtumat WHERE idTili=? ORDER BY Aikaleima DESC LIMIT 5 OFFSET ?', [id, parseInt(offset)], callback);
+},
   add: function(Tilitapahtumat, callback) {
     return db.query(
       'insert into Tilitapahtumat (Aikaleima, Saldomuutos, Muutoslaji, idTili, Paikkatieto) values(?,?,?,?,?)',

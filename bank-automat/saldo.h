@@ -21,20 +21,14 @@ public:
 
 
 public slots:
-    void setKieli(const int &newKieli);
     void commandClickHandler();
-    void setToken(const QByteArray &newToken);
 
+    void setToken(const QByteArray &newToken);
     void setUsername(const QString &newUsername);
-    void showUsername();
+    void setKieli(const int &newKieli);
 
     void onSaldoButtonClicked(QString tilinumero);
-/*    void setSaldo(const QString &newSaldo);
-    void showSaldo(); */
-
     void onValuuttaButtonClicked(QString tilinumero);
- /*   void setValuutta(const QString &newValuutta);
-    void showValuutta();*/
 
 private slots:
     void getSaldoSlot (QNetworkReply *reply);
@@ -46,8 +40,6 @@ private:
     QNetworkReply *reply;
     QByteArray response_data;
     QString username;
- /*   QString saldo;
-    QString valuutta;*/
     QByteArray token;
     int kieli;
 };
